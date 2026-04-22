@@ -29,7 +29,7 @@
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="about.php">About Us</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
