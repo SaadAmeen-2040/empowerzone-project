@@ -3,7 +3,6 @@ $page_title = "About Us - Empower Zone";
 $phone = "+1 (718) 757-6928";
 $email = "info@empowerzone.us";
 $address = "We Care Center, Brooklyn, NY";
-include 'index.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +43,7 @@ include 'index.php'
       width: 100vw;
       height: 100vh;
       background: linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
-                  url('food.png') center/cover no-repeat;
+                  url('images/food.png') center/cover no-repeat;
       display: flex; align-items: center; justify-content: center;
       text-align: center;
       padding: 80px 24px;
@@ -439,9 +438,47 @@ include 'index.php'
       .testimonial-featured { flex-direction: column; }
     }
   </style>
+  <style>
+    /* NAVBAR */
+    .ez-nav { position:fixed; top:16px; left:50%; transform:translateX(-50%); width:calc(100% - 48px); max-width:1100px; background:rgba(255,255,255,0.97); border-radius:14px; box-shadow:0 4px 32px rgba(0,0,0,0.13); z-index:1000; backdrop-filter:blur(10px); }
+    .ez-nav-inner { display:flex; align-items:center; justify-content:space-between; padding:10px 24px; gap:16px; }
+    .ez-nav .logo img { height:52px; width:auto; object-fit:contain; }
+    .ez-nav ul { display:flex; list-style:none; gap:8px; }
+    .ez-nav ul a { color:#1a2a2a; font-size:15px; font-weight:500; padding:6px 14px; border-radius:8px; text-decoration:none; transition:color .2s; font-family:'Inter',sans-serif; }
+    .ez-nav ul a:hover, .ez-nav ul a.active { color:#3a9fa8; }
+    .ez-call-btn { display:flex; align-items:center; gap:8px; padding:10px 22px; background:transparent; border:2px solid #3a9fa8; color:#3a9fa8; border-radius:10px; font-size:15px; font-weight:600; cursor:pointer; font-family:'Inter',sans-serif; transition:background .2s,color .2s; white-space:nowrap; }
+    .ez-call-btn:hover { background:#3a9fa8; color:#fff; }
+    .ez-hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+    .ez-hamburger span { display:block; width:24px; height:2px; background:#1a2a2a; border-radius:2px; transition:transform .3s,opacity .3s; }
+    .ez-hamburger.active span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .ez-hamburger.active span:nth-child(2) { opacity:0; }
+    .ez-hamburger.active span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .ez-nav-mobile { display:none; position:absolute; top:calc(100% + 8px); left:0; right:0; background:rgba(255,255,255,0.97); border-radius:12px; flex-direction:column; gap:4px; padding:12px 16px; box-shadow:0 8px 32px rgba(0,0,0,0.15); }
+    .ez-nav-mobile.open { display:flex; }
+    @media(max-width:900px){ .ez-nav{width:calc(100% - 24px);top:10px;} .ez-nav ul{display:none;} .ez-hamburger{display:flex;} }
+  </style>
 </head>
 <body>
 
+<nav class="ez-nav" id="ezNav">
+  <div class="ez-nav-inner">
+    <div class="logo"><a href="index.php"><img src="images/logo .png" alt="Empower Zone Logo"></a></div>
+    <ul id="ezLinks">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="about.php" class="active">About Us</a></li>
+      <li><a href="services.php">Services</a></li>
+      <li><a href="contact.php">Contact</a></li>
+    </ul>
+    <button class="ez-call-btn" onclick="window.location.href='tel:+17187576928'"><i class="fa fa-phone"></i> Call Now</button>
+    <button class="ez-hamburger" id="ezHam" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="ez-nav-mobile" id="ezMobile">
+    <a href="index.php" style="display:block;padding:10px 14px;color:#1a2a2a;text-decoration:none;font-size:15px;font-weight:500;">Home</a>
+    <a href="about.php" style="display:block;padding:10px 14px;color:#3a9fa8;text-decoration:none;font-size:15px;font-weight:500;">About Us</a>
+    <a href="services.php" style="display:block;padding:10px 14px;color:#1a2a2a;text-decoration:none;font-size:15px;font-weight:500;">Services</a>
+    <a href="contact.php" style="display:block;padding:10px 14px;color:#1a2a2a;text-decoration:none;font-size:15px;font-weight:500;">Contact</a>
+  </div>
+</nav>
 
 <section class="hero">
   <div class="hero-content" data-aos="fade-up" data-aos-delay="100">
@@ -638,5 +675,11 @@ include 'index.php'
     </div>
   </div>
 </section>
+<script>
+  document.getElementById('ezHam').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.getElementById('ezMobile').classList.toggle('open');
+  });
+</script>
 </body>
 </html>
