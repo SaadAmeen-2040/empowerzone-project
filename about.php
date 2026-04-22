@@ -675,6 +675,78 @@ $address = "We Care Center, Brooklyn, NY";
     </div>
   </div>
 </section>
+<footer>
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="images/logo .png" alt="Empower Zone Logo" style="width:52px;height:52px;object-fit:contain;margin-bottom:14px;">
+      <p>We help New York families navigate government benefit programs with ease. No stress, no endless forms, no waiting on hold. Your benefits made simple.</p>
+      <div class="footer-badge">
+        <i class="fas fa-heart"></i> 500+ Families Helped
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about.php">About Us</a></li>
+        <li><a href="services.php">Services</a></li>
+        <li><a href="#">Why Choose Us</a></li>
+        <li><a href="#">Success Stories</a></li>
+        <li><a href="contact.php">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Our Services -->
+    <div>
+      <h4>Our Services</h4>
+      <ul class="services-list">
+        <li><a href="services.php"><span class="svc-name">SNAP (Food Stamps)</span><span class="svc-sub">Maximum nutrition benefits</span></a></li>
+        <li><a href="services.php"><span class="svc-name">Cash Assistance</span><span class="svc-sub">Financial help for expenses</span></a></li>
+        <li><a href="services.php"><span class="svc-name">Medicaid</span><span class="svc-sub">Healthcare coverage</span></a></li>
+        <li><a href="services.php"><span class="svc-name">WIC Program</span><span class="svc-sub">Women, infants &amp; children</span></a></li>
+        <li><a href="services.php"><span class="svc-name">Application Assistance</span><span class="svc-sub">Full support from start to finish</span></a></li>
+        <li><a href="services.php"><span class="svc-name">Denial Appeals</span><span class="svc-sub">Fight for your benefits</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Us -->
+    <div>
+      <h4>Contact Us</h4>
+      <ul class="footer-contact">
+        <li><i class="fas fa-phone"></i> <a href="tel:+17187576928">+1 (718) 757-6928</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:info@empowerzone.us">info@empowerzone.us</a></li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:EmpowerZoneServices@gmail.com">EmpowerZoneServices@gmail.com</a></li>
+        <li><i class="fas fa-map-marker-alt"></i> 16 Court Street, Brooklyn, NY</li>
+      </ul>
+      <p style="font-size:0.85rem; color:rgba(255,255,255,0.6); margin-bottom:8px; margin-top:4px;">Follow Us</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div>&copy; 2026 Empower Zone. All rights reserved. Your Benefits. Your Rights. Your Advocate.</div>
+    <div class="footer-stats">
+      <span><strong>98%</strong> Success Rate</span>
+      <span><strong>500+</strong> Families Helped</span>
+      <span><strong>$2M+</strong> Benefits Secured</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="#" style="color:rgba(255,255,255,0.4);font-size:0.82rem;transition:color .2s;">Privacy Policy</a>
+      <a href="#" style="color:rgba(255,255,255,0.4);font-size:0.82rem;transition:color .2s;">Terms of Service</a>
+      <a href="#" style="color:rgba(255,255,255,0.4);font-size:0.82rem;transition:color .2s;">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
 <script>
   document.getElementById('ezHam').addEventListener('click', function() {
     this.classList.toggle('active');
