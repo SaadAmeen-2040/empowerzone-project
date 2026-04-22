@@ -3,6 +3,7 @@ $page_title = "About Us - Empower Zone";
 $phone = "+1 (718) 757-6928";
 $email = "info@empowerzone.us";
 $address = "We Care Center, Brooklyn, NY";
+include 'index.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
