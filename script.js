@@ -1,3 +1,4 @@
+// Call Now function
 function callNow() {
-    window.location.href = "tel:+9201234567890";
+    window.location.href = 'tel:+17187576928';
 }
