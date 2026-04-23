@@ -550,122 +550,167 @@ $footerServices =[
             left: -100px;
         }
 
-        .testimonial-slider-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto 30px auto;
-        }
+/* Container Layout */
+.testimonial-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 40px auto 15px auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
 
-        .testimonial-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-            border: 1px solid #f9f9f9;
-            padding: 40px;
-            position: relative;
-            text-align: center;
-            max-width: 700px;
-            width: 100%;
-        }
+/* White Card Box */
+.testimonial-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 700px;
+  padding: 40px;
+  overflow: hidden; /* Hides the sliding items outside the box */
+}
 
-        .quote-icon {
-            position: absolute;
-            top: 25px;
-            right: 35px;
-            font-size: 50px;
-            color: #f1f6f5;
-        }
+/* Track that slides */
+.slider-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
 
-        .stars i {
-            color: #fcc21b;
-            font-size: 16px;
-            margin: 0 2px 20px 2px;
-        }
+/* Individual Slide */
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
 
-        .testimony-text {
-            font-style: italic;
-            color: #555;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
+/* Large Quote Icon */
+.quote-mark {
+  position: absolute;
+  top: -25px;
+  right: 0px;
+  font-size: 100px;
+  font-family: Georgia, serif;
+  color: #f3f4f6;
+  line-height: 1;
+}
 
-        .testimony-author {
-            font-weight: bold;
-            color: #1e3131;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
+/* Stars */
+.stars {
+  color: #fbbf24; /* Gold */
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
 
-        .testimony-tags {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
+/* Text & Typography */
+.testimonial-text {
+  font-style: italic;
+  color: #4b5563;
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2; /* Keeps text above the quote icon */
+}
 
-        .t-tag {
-            padding: 4px 12px;
-            font-size: 11px;
-            border-radius: 20px;
-            font-weight: 600;
-        }
+.author-name {
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 16px;
+  margin: 0 0 15px 0;
+}
 
-        .tag-blue {
-            background: transparent;
-            color: #6eb7aa;
-            margin-top: 5px;
-        }
+/* Bottom Tags */
+.tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
 
-        .tag-green {
-            background: #eaf8f4;
-            color: #6eb7aa;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
+.tag-text {
+  color: #63b3a8;
+  font-weight: 600;
+  font-size: 13px;
+}
 
-        .slider-btn {
-            background: white;
-            border: 1px solid #eee;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6eb7aa;
-            cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            transition: 0.3s;
-        }
+.tag-badge {
+  background-color: #e6f6f4;
+  color: #63b3a8;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+}
 
-        .slider-btn:hover {
-            background: #6eb7aa;
-            color: white;
-        }
+/* Navigation Buttons */
+.nav-btn {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  color: #63b3a8; /* Teal arrow color */
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
 
-        .slider-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 50px;
-        }
+.nav-btn:hover {
+  background: #f9fafa;
+}
 
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #ddd;
-            cursor: pointer;
-        }
+.nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
 
-        .dot.active {
-            background: #6eb7aa;
-        }
+/* Pagination Dots */
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
 
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #e5e7eb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #63b3a8;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+  .testimonial-section {
+    position: relative;
+  }
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  .prev-btn { left: 0px; }
+  .next-btn { right: 0px; }
+  .testimonial-card {
+    padding: 30px 20px;
+    margin: 0 25px; /* Leaves space for overlapping arrows */
+  }
+}
         .ready-cta-box {
             background: #f7fbfc;
             border: 1px solid #ecf3f4;
@@ -1238,21 +1283,58 @@ $footerServices =[
             <h2 class="section-title">Success <span class="teal-text">Stories</span></h2>
             <p class="section-subtitle">Hear from families we've helped secure the benefits they deserve</p>
 
-            <div class="testimonial-slider-container">
-                <button class="slider-btn" onclick="prevTestimonial()"><i class="fa-solid fa-angle-left"></i></button>
-                <div class="testimonial-card">
-                    <i class="fa-solid fa-quote-right quote-icon"></i>
-                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="testimony-text">"After being denied twice for Medicaid, I almost gave up. Empower Zone reviewed my case, fixed the mistakes, and got me approved quickly. I'm so grateful!"</p>
-                    <p class="testimony-author">Michael Johnson, Queens NY</p>
-                    <div class="testimony-tags"><span class="t-tag tag-blue">Medicaid</span><br><span class="t-tag tag-green">Approved <i class="fa-solid fa-check"></i></span></div>
-                </div>
-                <button class="slider-btn" onclick="nextTestimonial()"><i class="fa-solid fa-angle-right"></i></button>
-            </div>
-            <div class="slider-dots">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-            </div>
+           <div class="testimonial-section">
+  <!-- Left Arrow -->
+  <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  </button>
+
+  <!-- Main Card -->
+  <div class="testimonial-card">
+    <div class="slider-track" id="sliderTrack">
+      
+      <!-- Slide 1 -->
+      <div class="slide">
+        <div class="quote-mark">”</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "After being denied twice for Medicaid, I almost gave up. Empower Zone reviewed my case, fixed the mistakes, and got me approved quickly. I'm so grateful!"
+        </p>
+        <h4 class="author-name">Michael Johnson, Queens NY</h4>
+        <div class="tags">
+          <span class="tag-text">Medicaid</span>
+          <span class="tag-badge">Approved ✓</span>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide">
+        <div class="quote-mark">”</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "The process was completely stress-free. The team handled all the paperwork and communicated with me every step of the way. Highly recommended service!"
+        </p>
+        <h4 class="author-name">Sarah Williams, Brooklyn NY</h4>
+        <div class="tags">
+          <span class="tag-text">Medicare</span>
+          <span class="tag-badge">Approved ✓</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Right Arrow -->
+  <button class="nav-btn next-btn" id="nextBtn" aria-label="Next">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </button>
+</div>
+
+<!-- Pagination Dots -->
+<div class="pagination-dots" id="paginationDots">
+  <span class="dot active" data-index="0"></span>
+  <span class="dot" data-index="1"></span>
+</div>
 
             <!-- READY CTA BOX -->
             <div class="ready-cta-box">
@@ -1415,10 +1497,47 @@ $footerServices =[
             });
         }
 
-        function nextTestimonial() {
-            document.querySelectorAll('.dot')[1].classList.add('active');
-            document.querySelectorAll('.dot')[0].classList.remove('active');
-        }
+       document.addEventListener("DOMContentLoaded", function() {
+  const track = document.getElementById("sliderTrack");
+  const dots = document.querySelectorAll(".dot");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  
+  let currentIndex = 0;
+  const totalSlides = dots.length; // Uses the number of dots to know how many slides exist
+
+  function updateSlider() {
+    // Slide the track
+    const slideWidth = 100; // 100% per slide
+    track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+
+    // Update active dot
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[currentIndex].classList.add("active");
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+    updateSlider();
+  }
+
+  // Button Clicks
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
+  // Dot Clicks
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      currentIndex = index;
+      updateSlider();
+    });
+  });
+});
 
         function prevTestimonial() {
             document.querySelectorAll('.dot')[0].classList.add('active');
