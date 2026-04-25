@@ -1,4 +1,4 @@
-﻿/* =============================================
+/* =============================================
    EMPOWER ZONE CONSULTING â€“ HOME PAGE STYLES
    ============================================= */
 
@@ -98,6 +98,7 @@ body {
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .call-btn:hover {
