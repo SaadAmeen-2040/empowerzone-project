@@ -1,3 +1,4 @@
+ 
 <?php
 // ============================================================
 // SERVICES PAGE — pages/services.php
@@ -58,14 +59,81 @@ $process = [
 ];
 ?>
 
+
+<!-- ===== SERVICES PAGE STYLES & SCRIPTS ===== -->
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    .slide-fade { transition: opacity 1s ease-in-out; }
+    .bg-overlay { background-color: #5E9EA8; opacity: 0.85; mix-blend-mode: multiply; }
+</style>
+
 <!-- ===== SERVICES HERO ===== -->
-<div class="page-hero page-hero--light">
-    <div class="page-hero-content">
-        <span class="page-hero-badge">What We Do</span>
-        <h1>Our <span class="teal-text">Services</span></h1>
-        <p>Complete benefits consulting — from first application to final approval. We handle it all.</p>
+<section class="relative w-full min-h-screen overflow-hidden bg-gray-900">
+    <div id="slider-container" class="absolute inset-0">
+        <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-100">
+            <img src="assets\images\food.png" alt="SNAP Benefits" class="w-full h-full object-cover">
+        </div>
+        <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
+            <img src="assets\images\hands.avif" alt="Cash Assistance" class="w-full h-full object-cover">
+        </div>
+        <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
+            <img src="assets\images\doctor.avif" alt="Medical Benefits" class="w-full h-full object-cover">
+        </div>
+
+        <div class="absolute inset-0 bg-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
     </div>
-</div>
+
+    <div class="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-20">
+        <div class="max-w-4xl mx-auto text-center">
+            
+            <div data-aos="fade-down" class="bg-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-medium mb-6 inline-flex items-center justify-center">
+                <span class="animate-pulse mr-2 text-white">•</span>YOUR BENEFITS ADVOCATE
+            </div>
+
+            <div class="mb-8">
+                <h1 id="main-title" data-aos="fade-up" data-aos-delay="200" class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    Cash Assistance Programs
+                </h1>
+            </div>
+
+            <div class="mt-6">
+                <p id="sub-text-1" data-aos="fade-up" data-aos-delay="300" class="text-xl text-white/95 font-light leading-relaxed max-w-2xl mx-auto mb-8">
+                    Emergency financial help for rent, bills, and daily expenses with guaranteed maximum benefits.
+                </p>
+            </div>
+
+            <div class="mt-4">
+                <p data-aos="fade-up" data-aos-delay="400" class="text-lg text-white/90 leading-relaxed max-w-2xl mx-auto mb-10">
+                    Sit back, relax, and let us handle everything. No stress, no endless forms, no waiting on hold.
+                </p>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/contact">
+                    <button class="w-full sm:w-auto bg-white text-[#5E9EA8] px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 duration-300 shadow-lg">
+                        Free Consultation
+                    </button>
+                </a>
+                <a href="/services">
+                    <button class="w-full sm:w-auto border-2 border-white text-white px-10 py-4 rounded-lg font-bold hover:bg-white hover:text-[#5E9EA8] transition-all transform hover:scale-105 duration-300">
+                        View All Services
+                    </button>
+                </a>
+            </div>
+
+            <div class="flex justify-center gap-3 mt-12">
+                <button onclick="goToSlide(0)" class="dot w-3 h-3 rounded-full bg-white transition-all scale-125" aria-label="Slide 1"></button>
+                <button onclick="goToSlide(1)" class="dot w-3 h-3 rounded-full bg-white/40 transition-all hover:bg-white/70" aria-label="Slide 2"></button>
+                <button onclick="goToSlide(2)" class="dot w-3 h-3 rounded-full bg-white/40 transition-all hover:bg-white/70" aria-label="Slide 3"></button>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="500" class="mt-10 text-white/80 text-lg">
+                <p>Call today: <a href="tel:+17187576928" class="font-bold text-white hover:underline">+1 (718) 757-6928</a></p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- ===== SERVICES GRID ===== -->
 <section class="services-section">
@@ -129,3 +197,47 @@ $process = [
         </div>
     </div>
 </section>
+
+
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Initialize Animations
+    AOS.init({ duration: 1000, once: true });
+
+    // Slider Logic
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const titles = ["Cash Assistance Programs", "SNAP Benefits Assistance", "Medical Coverage Support"];
+    const subTexts = [
+        "Emergency financial help for rent, bills, and daily expenses with guaranteed maximum benefits.",
+        "We ensure you receive the maximum food stamp benefits you're entitled to with expert assistance.",
+        "Navigate complex healthcare applications easily and secure the coverage your family deserves."
+    ];
+    
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+        // Reset old slide
+        slides[currentSlide].classList.replace('opacity-100', 'opacity-0');
+        dots[currentSlide].classList.replace('bg-white', 'bg-white/40');
+        dots[currentSlide].classList.remove('scale-125');
+
+        // Set new slide
+        currentSlide = index;
+        slides[currentSlide].classList.replace('opacity-0', 'opacity-100');
+        dots[currentSlide].classList.replace('bg-white/40', 'bg-white');
+        dots[currentSlide].classList.add('scale-125');
+
+        // Update Text
+        document.getElementById('main-title').innerText = titles[currentSlide];
+        document.getElementById('sub-text-1').innerText = subTexts[currentSlide];
+    }
+
+    // Auto-play slider
+    setInterval(() => {
+        let next = (currentSlide + 1) % slides.length;
+        goToSlide(next);
+    }, 5000);
+</script>
