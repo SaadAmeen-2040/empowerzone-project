@@ -103,6 +103,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitBtn   = document.getElementById('submitBtn');
 
     if (contactForm && submitBtn) {
+        // Initialize EmailJS (Replace 'YOUR_PUBLIC_KEY' with actual key)
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("ujVJfTIdsYNah4zoV");
+        }
+
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -110,18 +115,53 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending…';
             submitBtn.disabled  = true;
 
-            // Simulate submission (replace with real AJAX/fetch if needed)
-            setTimeout(function () {
-                submitBtn.innerHTML = '<i class="fa fa-check"></i> Message Sent!';
-                submitBtn.style.background = '#27ae60';
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            
+            const programSelect = document.getElementById('programSelect');
+            let programText = 'None Selected';
+            if(programSelect && programSelect.selectedIndex > 0) {
+                 programText = programSelect.options[programSelect.selectedIndex].text;
+            }
 
-                setTimeout(function () {
-                    submitBtn.innerHTML        = '<i class="fa fa-paper-plane"></i> Get Free Consultation';
-                    submitBtn.style.background = '';
-                    submitBtn.disabled         = false;
-                    contactForm.reset();
-                }, 3000);
-            }, 1000);
+            const templateParams = {
+                user_name: document.getElementById('fullName').value,
+                user_email: document.getElementById('emailField').value,
+                user_phone: document.getElementById('phoneField') ? document.getElementById('phoneField').value : '',
+                program_type: programText,
+                message: document.getElementById('message') ? document.getElementById('message').value : '',
+                date_time: dateTimeString
+            };
+
+            // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID'
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send('service_uqijdbx', 'template_q3rrevn', templateParams)
+                    .then(function(response) {
+                        submitBtn.innerHTML = '<i class="fa fa-check"></i> Message Sent!';
+                        submitBtn.style.background = '#27ae60';
+
+                        setTimeout(function () {
+                            submitBtn.innerHTML        = '<i class="fa fa-paper-plane"></i> Get Free Consultation';
+                            submitBtn.style.background = '';
+                            submitBtn.disabled         = false;
+                            contactForm.reset();
+                        }, 3000);
+                    }, function(error) {
+                        console.error('FAILED...', error);
+                        submitBtn.innerHTML = '<i class="fa fa-times"></i> Failed to send';
+                        submitBtn.style.background = '#e74c3c';
+                        
+                        setTimeout(function () {
+                            submitBtn.innerHTML        = '<i class="fa fa-paper-plane"></i> Get Free Consultation';
+                            submitBtn.style.background = '';
+                            submitBtn.disabled         = false;
+                        }, 3000);
+                    });
+            } else {
+                console.error("EmailJS not loaded");
+                submitBtn.innerHTML = '<i class="fa fa-times"></i> Service Unavailable';
+                submitBtn.disabled = false;
+            }
         });
     }
 
