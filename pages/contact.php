@@ -9,9 +9,9 @@ $pageDesc  = 'Get your benefits started with a free consultation. Contact Empowe
 <!-- ===== CONTACT HERO ===== -->
 <div class="page-hero page-hero--light">
     <div class="page-hero-content">
-        <span class="page-hero-badge">Get In Touch</span>
-        <h1>Get Your <span class="teal-text">Benefits Started</span></h1>
-        <p>Take one small step — and we'll handle the rest. No stress, no endless forms, no waiting on hold.</p>
+        <span class="page-hero-badge" data-aos="fade-down">Get In Touch</span>
+        <h1 data-aos="fade-up" data-aos-delay="100">Get Your <span class="teal-text">Benefits Started</span></h1>
+        <p data-aos="fade-up" data-aos-delay="200">Take one small step — and we'll handle the rest. No stress, no endless forms, no waiting on hold.</p>
     </div>
 </div>
 
@@ -21,7 +21,7 @@ $pageDesc  = 'Get your benefits started with a free consultation. Contact Empowe
         <div class="contact-wrapper">
 
             <!-- LEFT: Contact Form -->
-            <div class="form-card">
+            <div class="form-card" data-aos="fade-right">
                 <div class="form-card-title">
                     <i class="fa fa-paper-plane"></i> Free Benefits Consultation
                 </div>
@@ -62,42 +62,42 @@ $pageDesc  = 'Get your benefits started with a free consultation. Contact Empowe
 
                 <!-- Info Cards Grid -->
                 <div class="info-cards-grid">
-                    <div class="info-card">
+                    <div class="info-card" data-aos="zoom-in" data-aos-delay="100">
                         <div class="info-card-icon"><i class="fa fa-phone"></i></div>
                         <div class="info-card-body">
                             <h4>Call Us Now</h4>
                             <p><a href="tel:<?php echo SITE_PHONE_RAW; ?>"><?php echo SITE_PHONE; ?></a></p>
                         </div>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="info-card-icon"><i class="fab fa-whatsapp"></i></div>
                         <div class="info-card-body">
                             <h4>WhatsApp</h4>
                             <p><a href="https://wa.me/<?php echo ltrim(SITE_PHONE_RAW, '+'); ?>" target="_blank">Message us directly</a></p>
                         </div>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card" data-aos="zoom-in" data-aos-delay="300">
                         <div class="info-card-icon"><i class="fa fa-envelope"></i></div>
                         <div class="info-card-body">
                             <h4>Email Us</h4>
                             <p><a href="mailto:<?php echo SITE_EMAIL_GMAIL; ?>"><?php echo SITE_EMAIL_GMAIL; ?></a></p>
                         </div>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card" data-aos="zoom-in" data-aos-delay="400">
                         <div class="info-card-icon"><i class="fa fa-clock"></i></div>
                         <div class="info-card-body">
                             <h4>Working Hours</h4>
                             <p>Mon–Fri: 9AM–6PM EST</p>
                         </div>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card" data-aos="zoom-in" data-aos-delay="500">
                         <div class="info-card-icon"><i class="fa fa-users"></i></div>
                         <div class="info-card-body">
                             <h4>Service Area</h4>
                             <p>Serving New York Families</p>
                         </div>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card" data-aos="zoom-in" data-aos-delay="600">
                         <div class="info-card-icon"><i class="fa fa-shield-alt"></i></div>
                         <div class="info-card-body">
                             <h4>Confidential</h4>
@@ -107,7 +107,7 @@ $pageDesc  = 'Get your benefits started with a free consultation. Contact Empowe
                 </div>
 
                 <!-- Why Choose Us Box -->
-                <div class="why-box">
+                <div class="why-box" data-aos="fade-up" data-aos-delay="700">
                     <h3>Why Choose Us?</h3>
                     <ul class="why-list">
                         <li>No upfront fees – pay only when approved</li>

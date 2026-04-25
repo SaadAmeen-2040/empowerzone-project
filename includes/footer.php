@@ -29,6 +29,7 @@
             <div class="footer-col">
                 <h4>Our Services</h4>
                 <ul class="footer-services-list">
+                    <!-- Loop through services array (from config.php) to build the footer list -->
                     <?php foreach ($footerServices as $svcTitle => $svcDesc): ?>
                         <li>
                             <a href="index.php?page=services">
@@ -91,6 +92,16 @@
 
     </div><!-- /.footer-inner -->
 </footer>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+    });
+</script>
 
 <!-- Main JS -->
 <script src="assets/js/app.js"></script>

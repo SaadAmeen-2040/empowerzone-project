@@ -69,3 +69,23 @@ These files only contain the specific content for the middle of each page.
   - **Layouts:** It tells the browser how to place items side-by-side using "Flexbox" and "Grid".
   - **Typography:** It controls font sizes, boldness, and spacing.
   - **Mobile Responsiveness:** At the bottom of the file (usually called Media Queries), it tells the website how to change shape when someone is viewing it on a smaller mobile phone screen (like shrinking text or stacking columns on top of each other).
+
+---
+
+## 5. JavaScript & Interactions (`assets/js/` folder)
+
+### 📄 `assets/js/app.js`
+- **What it is:** The file that adds interactivity and logic to the website.
+- **How it works:** This file controls the dynamic elements of your website. Specifically:
+  - **Mobile Menu:** It handles the opening and closing of the hamburger navigation menu on small screens.
+  - **Testimonial Slider (Homepage):** It powers the slider on the homepage, rotating through testimonials every few seconds and allowing users to click next/previous buttons or dots.
+  - **Contact Form Validation/Submission:** It intercepts the contact form submission, showing a loading spinner and a "Message Sent!" confirmation state before resetting the form.
+
+---
+
+## 6. Animations (AOS Library)
+- **What it is:** The "Animate On Scroll" (AOS) library is used to make elements smoothly fade, slide, or zoom into view as the user scrolls down the page.
+- **How it works:**
+  - The AOS stylesheet is loaded in `includes/header.php`.
+  - The AOS script is loaded and initialized at the bottom of `includes/footer.php` so it runs on every page.
+  - In your page files (`home.php`, `about.php`, `contact.php`, etc.), HTML elements have special attributes like `data-aos="fade-up"` and `data-aos-delay="100"`. These tell the library exactly how and when to animate each specific element when it comes into view.

@@ -34,7 +34,7 @@ $whyChooseUs = [
 
 <!-- ===== HERO SECTION ===== -->
 <div class="hero-bg">
-    <main class="hero-content">
+    <main class="hero-content" data-aos="fade-up">
         <div class="brand-pill">
             <span class="pill-dot"></span> EMPOWER ZONE CONSULTING
         </div>
@@ -66,7 +66,7 @@ $whyChooseUs = [
 </div>
 
 <!-- ===== CONTACT BAR ===== -->
-<div class="contact-bar">
+<div class="contact-bar" data-aos="fade-up" data-aos-delay="200">
     <div class="contact-bar-inner">
         <div class="contact-item">
             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
@@ -94,8 +94,9 @@ $whyChooseUs = [
 <section class="stats-section">
     <div class="container">
         <div class="stats-grid">
-            <?php foreach ($statistics as $stat): ?>
-                <div class="stat-card">
+            <!-- Loop through statistics array to generate stat cards -->
+            <?php foreach ($statistics as $index => $stat): ?>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="<?php echo $index * 100; ?>">
                     <i class="<?php echo $stat['icon']; ?> stat-icon"></i>
                     <h3><?php echo $stat['count']; ?></h3>
                     <p><?php echo $stat['title']; ?></p>
@@ -108,11 +109,12 @@ $whyChooseUs = [
 <!-- ===== CORE OFFERS SECTION ===== -->
 <section class="core-section" id="services">
     <div class="container">
-        <h2 class="section-title">Our Core Offer</h2>
+        <h2 class="section-title" data-aos="fade-up">Our Core Offer</h2>
 
         <div class="core-grid">
-            <?php foreach ($coreOffers as $offer): ?>
-                <div class="core-card">
+            <!-- Loop through core offers array to generate service cards -->
+            <?php foreach ($coreOffers as $index => $offer): ?>
+                <div class="core-card" data-aos="fade-up" data-aos-delay="<?php echo $index * 100; ?>">
                     <div class="core-icon">
                         <i class="<?php echo $offer['icon']; ?>"></i>
                     </div>
@@ -122,7 +124,7 @@ $whyChooseUs = [
             <?php endforeach; ?>
         </div>
 
-        <div class="core-more-box">
+        <div class="core-more-box" data-aos="fade-in">
             <h4>And More…</h4>
             <p>Beyond applications, we stand with you at every stage — providing updates, clarifying doubts, and making sure you never feel alone in the process. Our team's dedication ensures your case gets the attention and persistence it deserves.</p>
         </div>
@@ -132,12 +134,13 @@ $whyChooseUs = [
 <!-- ===== WHY CHOOSE US ===== -->
 <section class="why-section" id="about">
     <div class="container">
-        <h2 class="section-title">Why People Choose <span class="teal-text">Empower Zone</span></h2>
-        <p class="section-subtitle">We're different from other services because we truly care about your success and make the process effortless for you.</p>
+        <h2 class="section-title" data-aos="fade-up">Why People Choose <span class="teal-text">Empower Zone</span></h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We're different from other services because we truly care about your success and make the process effortless for you.</p>
 
         <div class="why-grid">
-            <?php foreach ($whyChooseUs as $reason): ?>
-                <div class="why-card">
+            <!-- Loop through reasons array to generate 'why choose us' feature cards -->
+            <?php foreach ($whyChooseUs as $index => $reason): ?>
+                <div class="why-card" data-aos="fade-right" data-aos-delay="<?php echo $index * 100; ?>">
                     <div class="why-icon">
                         <i class="<?php echo $reason['icon']; ?>"></i>
                     </div>
@@ -152,10 +155,10 @@ $whyChooseUs = [
 <!-- ===== TESTIMONIALS ===== -->
 <section class="testimonials-section">
     <div class="container">
-        <h2 class="section-title">Success <span class="teal-text">Stories</span></h2>
-        <p class="section-subtitle">Hear from families we've helped secure the benefits they deserve</p>
+        <h2 class="section-title" data-aos="fade-up">Success <span class="teal-text">Stories</span></h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Hear from families we've helped secure the benefits they deserve</p>
 
-        <div class="testimonial-slider">
+        <div class="testimonial-slider" data-aos="zoom-in" data-aos-delay="200">
             <button class="slider-btn" id="prevBtn" aria-label="Previous">
                 <i class="fa-solid fa-angle-left"></i>
             </button>
@@ -187,7 +190,7 @@ $whyChooseUs = [
         </div>
 
         <!-- CTA Box -->
-        <div class="ready-cta-box">
+        <div class="ready-cta-box" data-aos="fade-up">
             <h3>Ready to become our next success story?</h3>
             <p>Join hundreds of families who have successfully navigated the benefits system with our help</p>
             <a href="index.php?page=contact" class="btn-teal">Start Your Application Today</a>
@@ -196,30 +199,30 @@ $whyChooseUs = [
 </section>
 
 <!-- ===== CONTACT CTA SECTION ===== -->
-<section class="journey-section" id="contact">
+<section class="journey-section" id="contact" data-aos="fade-up">
     <h2>Your Benefits Journey Starts Here</h2>
     <p>Take one small step — and we'll handle the rest. No stress, no endless forms, no waiting on hold.</p>
 
     <div class="journey-cards">
-        <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="journey-card">
+        <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="journey-card" data-aos="fade-up" data-aos-delay="0">
             <div class="journey-icon"><i class="fa-solid fa-phone"></i></div>
             <h4>Call Us</h4>
             <p><?php echo SITE_PHONE; ?></p>
             <span>Mon–Fri, 9AM–6PM EST</span>
         </a>
-        <a href="https://wa.me/<?php echo ltrim(SITE_PHONE_RAW, '+'); ?>" class="journey-card" target="_blank">
+        <a href="https://wa.me/<?php echo ltrim(SITE_PHONE_RAW, '+'); ?>" class="journey-card" target="_blank" data-aos="fade-up" data-aos-delay="100">
             <div class="journey-icon"><i class="fa-brands fa-whatsapp"></i></div>
             <h4>WhatsApp</h4>
             <p>Message Us</p>
             <span>Quick responses</span>
         </a>
-        <a href="mailto:<?php echo SITE_EMAIL_GMAIL; ?>" class="journey-card">
+        <a href="mailto:<?php echo SITE_EMAIL_GMAIL; ?>" class="journey-card" data-aos="fade-up" data-aos-delay="200">
             <div class="journey-icon"><i class="fa-regular fa-envelope"></i></div>
             <h4>Email</h4>
             <p><?php echo SITE_EMAIL_GMAIL; ?></p>
             <span>24/7 availability</span>
         </a>
-        <a href="index.php?page=contact" class="journey-card">
+        <a href="index.php?page=contact" class="journey-card" data-aos="fade-up" data-aos-delay="300">
             <div class="journey-icon"><i class="fa-regular fa-clock"></i></div>
             <h4>Free Consultation</h4>
             <p>No obligation</p>
@@ -227,7 +230,7 @@ $whyChooseUs = [
         </a>
     </div>
 
-    <div class="journey-why-box">
+    <div class="journey-why-box" data-aos="fade-in" data-aos-delay="200">
         <h3>Why Contact Us Today?</h3>
         <div class="journey-why-grid">
             <div><i class="fa-regular fa-circle-check"></i> No upfront fees – affordable payment options</div>

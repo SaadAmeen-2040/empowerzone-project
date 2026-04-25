@@ -74,6 +74,7 @@ $process = [
         <p class="section-subtitle">From SNAP to Medicaid, Cash Assistance to WIC — we cover every major benefit program available to New York families.</p>
 
         <div class="services-grid">
+            <!-- Loop through the $services array defined at the top of the file to render each service card dynamically -->
             <?php foreach ($services as $svc): ?>
                 <div class="service-card">
                     <div class="service-icon" style="background: <?php echo $svc['color']; ?>">
@@ -99,6 +100,7 @@ $process = [
         <p class="section-subtitle">Our simple 4-step process takes the stress out of getting your benefits</p>
 
         <div class="process-grid">
+            <!-- Loop through the $process array to render each step dynamically -->
             <?php foreach ($process as $step): ?>
                 <div class="process-step">
                     <div class="process-number"><?php echo $step['step']; ?></div>
