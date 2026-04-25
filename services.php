@@ -165,40 +165,55 @@ $process = [
     </div>
 </section>
 
-<!-- ===== HOW IT WORKS ===== -->
-<section class="process-section">
-    <div class="container">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">Our simple 4-step process takes the stress out of getting your benefits</p>
 
-        <div class="process-grid">
-            <!-- Loop through the $process array to render each step dynamically -->
-            <?php foreach ($process as $step): ?>
-                <div class="process-step">
-                    <div class="process-number"><?php echo $step['step']; ?></div>
-                    <h4><?php echo $step['title']; ?></h4>
-                    <p><?php echo $step['desc']; ?></p>
-                </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
 
-<!-- ===== SERVICES CTA ===== -->
-<section class="services-cta-section">
-    <div class="container">
-        <div class="services-cta-box">
-            <h2>Ready to Get Your Benefits?</h2>
-            <p>Don't wait. Contact us today for a free consultation. We'll review your case and tell you exactly what you qualify for — at no cost to you.</p>
-            <div class="cta-buttons">
-                <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn-primary">
-                    <i class="fas fa-phone"></i> Call Now: <?php echo SITE_PHONE; ?>
-                </a>
-                <a href="contact.php" class="btn-outline">
-                    <i class="fas fa-paper-plane"></i> Send a Message
-                </a>
+
+<!-- ===== READY CTA ===== -->
+<section class="w-full bg-[#5E9EA8] py-20 px-4 sm:px-6 lg:px-8 font-sans">
+    <div class="max-w-5xl mx-auto flex flex-col items-center">
+        
+        <!-- Header -->
+        <h2 class="text-3xl md:text-5xl font-bold text-white text-center mb-6 leading-tight" data-aos="fade-up">
+            Ready to Get the Benefits You Deserve?
+        </h2>
+        <p class="text-lg md:text-xl text-white/90 text-center max-w-3xl mb-12" data-aos="fade-up" data-aos-delay="100">
+            Stop struggling with confusing applications and denial letters. Let our experts handle everything for you.
+        </p>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-12" data-aos="fade-up" data-aos-delay="200">
+            <!-- Box 1 -->
+            <div class="border border-white/30 bg-white/10 backdrop-blur-md rounded-xl p-6 text-center shadow-sm">
+                <h3 class="text-white font-bold text-lg mb-1">No Upfront Fees</h3>
+                <p class="text-white/80 text-sm">Affordable payment options</p>
+            </div>
+            <!-- Box 2 -->
+            <div class="border border-white/30 bg-white/10 backdrop-blur-md rounded-xl p-6 text-center shadow-sm">
+                <h3 class="text-white font-bold text-lg mb-1">98% Success Rate</h3>
+                <p class="text-white/80 text-sm">Maximum benefits guaranteed</p>
+            </div>
+            <!-- Box 3 -->
+            <div class="border border-white/30 bg-white/10 backdrop-blur-md rounded-xl p-6 text-center shadow-sm">
+                <h3 class="text-white font-bold text-lg mb-1">Bilingual Support</h3>
+                <p class="text-white/80 text-sm">English and Spanish available</p>
             </div>
         </div>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full" data-aos="fade-up" data-aos-delay="300">
+            <a href="contact.php" class="w-full sm:w-auto text-center bg-white text-[#5E9EA8] px-8 py-3.5 rounded-lg font-bold hover:bg-gray-100 transition-all shadow-md">
+                Free Consultation
+            </a>
+            <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="w-full sm:w-auto text-center border-2 border-white text-white px-8 py-3.5 rounded-lg font-bold hover:bg-white hover:text-[#5E9EA8] transition-all">
+                Call Now: <?php echo SITE_PHONE; ?>
+            </a>
+        </div>
+
+        <!-- Footer Note -->
+        <div class="mt-10 text-white/80 text-sm md:text-base" data-aos="fade-in" data-aos-delay="400">
+            <p>• No obligation • Confidential • Professional service</p>
+        </div>
+
     </div>
 </section>
 
