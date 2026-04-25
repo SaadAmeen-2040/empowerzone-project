@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($pageTitle ?? SITE_NAME); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($pageDesc ?? 'Empower Zone helps New York families get the government benefits they deserve. SNAP, Medicaid, Cash Assistance, WIC, and more.'); ?>">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo%20.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
