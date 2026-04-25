@@ -1,10 +1,14 @@
 <?php
+$page = 'contact';
+require_once 'includes/config.php';
 // ============================================================
 // CONTACT PAGE — pages/contact.php
 // ============================================================
 $pageTitle = 'Contact Us – Empower Zone Consulting';
 $pageDesc  = 'Get your benefits started with a free consultation. Contact Empower Zone Consulting today — no upfront fees, bilingual support.';
 ?>
+<?php include 'includes/header.php'; ?>
+<?php include 'includes/navbar.php'; ?>
 
 <!-- ===== CONTACT HERO ===== -->
 <div class="page-hero page-hero--light">
@@ -121,3 +125,5 @@ $pageDesc  = 'Get your benefits started with a free consultation. Contact Empowe
         </div><!-- /.contact-wrapper -->
     </div>
 </section>
+
+<?php include 'includes/footer.php'; ?>

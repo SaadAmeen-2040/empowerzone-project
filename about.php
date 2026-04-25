@@ -1,4 +1,6 @@
 <?php
+$page = 'about';
+require_once 'includes/config.php';
 // ============================================================
 // ABOUT PAGE — pages/about.php
 // ============================================================
@@ -26,6 +28,8 @@ $testimonials = [
     ['name' => 'Sophia Chen',       'role' => 'WIC Program',             'location' => 'Staten Island, NY','program' => 'WIC',               'quote' => 'They handled everything for my WIC application. My newborn and I are so grateful for their help.', 'img' => 'https://randomuser.me/api/portraits/women/22.jpg'],
 ];
 ?>
+<?php include 'includes/header.php'; ?>
+<?php include 'includes/navbar.php'; ?>
 
 <!-- ===== ABOUT HERO ===== -->
 <section class="about-custom-hero">
@@ -345,3 +349,5 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </div>
 </section>
+
+<?php include 'includes/footer.php'; ?>

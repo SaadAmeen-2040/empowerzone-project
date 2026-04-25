@@ -19,9 +19,9 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="index.php?page=about">About Us</a></li>
-                    <li><a href="index.php?page=services">Services</a></li>
-                    <li><a href="index.php?page=contact">Contact</a></li>
+                    <li><a href="about.php">About Us</a></li>
+                    <li><a href="services.php">Services</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
 
@@ -32,7 +32,7 @@
                     <!-- Loop through services array (from config.php) to build the footer list -->
                     <?php foreach ($footerServices as $svcTitle => $svcDesc): ?>
                         <li>
-                            <a href="index.php?page=services">
+                            <a href="services.php">
                                 <span class="svc-name"><?php echo $svcTitle; ?></span>
                                 <span class="svc-desc"><?php echo $svcDesc; ?></span>
                             </a>

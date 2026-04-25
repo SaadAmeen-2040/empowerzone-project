@@ -19,9 +19,9 @@ define('SITE_TAGLINE',      'Your Benefits. Your Rights. Your Advocate.');
 // Key = Display label, Value = page parameter (used in index.php routing)
 $navLinks = [
     'Home'     => 'index.php',
-    'About Us' => 'index.php?page=about',
-    'Services' => 'index.php?page=services',
-    'Contact'  => 'index.php?page=contact',
+    'About Us' => 'about.php',
+    'Services' => 'services.php',
+    'Contact'  => 'contact.php',
 ];
 
 // --- Footer Services List ---

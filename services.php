@@ -1,5 +1,7 @@
  
 <?php
+$page = 'services';
+require_once 'includes/config.php';
 // ============================================================
 // SERVICES PAGE — pages/services.php
 // ============================================================
@@ -58,6 +60,8 @@ $process = [
     ['step' => '04', 'title' => 'Follow-Up & Approval', 'desc' => 'We monitor your case, respond to agency requests, and keep pushing until you\'re approved.'],
 ];
 ?>
+<?php include 'includes/header.php'; ?>
+<?php include 'includes/navbar.php'; ?>
 
 
 <!-- ===== SERVICES PAGE STYLES & SCRIPTS ===== -->
@@ -190,7 +194,7 @@ $process = [
                 <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn-primary">
                     <i class="fas fa-phone"></i> Call Now: <?php echo SITE_PHONE; ?>
                 </a>
-                <a href="index.php?page=contact" class="btn-outline">
+                <a href="contact.php" class="btn-outline">
                     <i class="fas fa-paper-plane"></i> Send a Message
                 </a>
             </div>
@@ -241,3 +245,5 @@ $process = [
         goToSlide(next);
     }, 5000);
 </script>
+
+<?php include 'includes/footer.php'; ?>

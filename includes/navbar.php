@@ -1,6 +1,6 @@
 <?php
 // Determine which page is active for nav highlight
-$currentPage = $_GET['page'] ?? 'home';
+$currentPage = $page ?? 'home';
 ?>
 
 <!-- ===== NAVBAR ===== -->
@@ -17,9 +17,9 @@ $currentPage = $_GET['page'] ?? 'home';
         <!-- Desktop Nav Links -->
         <ul class="nav-links" id="navLinks">
             <li><a href="index.php"                  <?php echo ($currentPage === 'home')     ? 'class="active"' : ''; ?>>Home</a></li>
-            <li><a href="index.php?page=about"        <?php echo ($currentPage === 'about')    ? 'class="active"' : ''; ?>>About Us</a></li>
-            <li><a href="index.php?page=services"     <?php echo ($currentPage === 'services') ? 'class="active"' : ''; ?>>Services</a></li>
-            <li><a href="index.php?page=contact"      <?php echo ($currentPage === 'contact')  ? 'class="active"' : ''; ?>>Contact</a></li>
+            <li><a href="about.php"        <?php echo ($currentPage === 'about')    ? 'class="active"' : ''; ?>>About Us</a></li>
+            <li><a href="services.php"     <?php echo ($currentPage === 'services') ? 'class="active"' : ''; ?>>Services</a></li>
+            <li><a href="contact.php"      <?php echo ($currentPage === 'contact')  ? 'class="active"' : ''; ?>>Contact</a></li>
         </ul>
 
         <!-- Call Button -->
@@ -39,8 +39,8 @@ $currentPage = $_GET['page'] ?? 'home';
     <!-- Mobile Dropdown Menu -->
     <div class="nav-mobile" id="navMobile">
         <a href="index.php"               <?php echo ($currentPage === 'home')     ? 'class="active"' : ''; ?>>Home</a>
-        <a href="index.php?page=about"    <?php echo ($currentPage === 'about')    ? 'class="active"' : ''; ?>>About Us</a>
-        <a href="index.php?page=services" <?php echo ($currentPage === 'services') ? 'class="active"' : ''; ?>>Services</a>
-        <a href="index.php?page=contact"  <?php echo ($currentPage === 'contact')  ? 'class="active"' : ''; ?>>Contact</a>
+        <a href="about.php"    <?php echo ($currentPage === 'about')    ? 'class="active"' : ''; ?>>About Us</a>
+        <a href="services.php" <?php echo ($currentPage === 'services') ? 'class="active"' : ''; ?>>Services</a>
+        <a href="contact.php"  <?php echo ($currentPage === 'contact')  ? 'class="active"' : ''; ?>>Contact</a>
     </div>
 </nav>
