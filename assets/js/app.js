@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const navMobile = document.getElementById('navMobile');
 
     if (hamburger && navMobile) {
+        // Ensure menu is closed on fresh load (prevents issues when navigating back/forward)
+        hamburger.classList.remove('active');
+        navMobile.classList.remove('open');
+
         hamburger.addEventListener('click', function () {
             this.classList.toggle('active');
             navMobile.classList.toggle('open');

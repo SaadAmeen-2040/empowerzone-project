@@ -88,51 +88,51 @@ $process = [
         <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
     </div>
 
-    <div class="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-20">
+    <div class="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-40 pb-20 md:py-32">
         <div class="max-w-4xl mx-auto text-center">
             
-            <div data-aos="fade-down" class="bg-white/20 backdrop-blur-md text-white px-5 py-2 mt-5  rounded-full text-sm font-medium mb-6 inline-flex items-center justify-center">
+            <div data-aos="fade-down" class="bg-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6 inline-flex items-center justify-center tracking-wider">
                 <span class="animate-pulse mr-2 text-white">•</span>YOUR BENEFITS ADVOCATE
             </div>
 
-            <div class="mb-8">
-                <h1 id="main-title" data-aos="fade-up" data-aos-delay="200" class="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            <div class="mb-6">
+                <h1 id="main-title" data-aos="fade-up" data-aos-delay="200" class="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white mb-4 leading-tight">
                     Cash Assistance Programs
                 </h1>
             </div>
 
-            <div class="mt-6">
-                <p id="sub-text-1" data-aos="fade-up" data-aos-delay="300" class="text-xl text-white/95 font-light leading-relaxed max-w-2xl mx-auto mb-8">
+            <div class="mt-4">
+                <p id="sub-text-1" data-aos="fade-up" data-aos-delay="300" class="text-lg sm:text-xl text-white/95 font-light leading-relaxed max-w-2xl mx-auto mb-6">
                     Emergency financial help for rent, bills, and daily expenses with guaranteed maximum benefits.
                 </p>
             </div>
 
-            <div class="mt-4">
-                <p data-aos="fade-up" data-aos-delay="400" class="text-lg text-white/90 leading-relaxed max-w-2xl mx-auto mb-10">
+            <div class="mt-2">
+                <p data-aos="fade-up" data-aos-delay="400" class="text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto mb-8">
                     Sit back, relax, and let us handle everything. No stress, no endless forms, no waiting on hold.
                 </p>
             </div>
 
             <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="contact.php">
-                    <button  class="w-full sm:w-auto bg-white text-[#5E9EA8] px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 duration-300 shadow-lg">
+                <a href="contact.php" class="w-full sm:w-auto">
+                    <button class="w-full bg-white text-[#5E9EA8] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all transform hover:scale-105 duration-300 shadow-xl">
                         Free Consultation
                     </button>
                 </a>
-                <a href="#s-grid">
-                    <button class="w-full sm:w-auto border-2 border-white text-white px-10 py-4 rounded-lg font-bold hover:bg-white hover:text-[#5E9EA8] transition-all transform hover:scale-105 duration-300">
+                <a href="#s-grid" class="w-full sm:w-auto">
+                    <button class="w-full border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-[#5E9EA8] transition-all transform hover:scale-105 duration-300">
                         View All Services
                     </button>
                 </a>
             </div>
 
             <div class="flex justify-center gap-3 mt-12">
-                <button onclick="goToSlide(0)" class="dot w-3 h-3 rounded-full bg-white transition-all scale-125" aria-label="Slide 1"></button>
-                <button onclick="goToSlide(1)" class="dot w-3 h-3 rounded-full bg-white/40 transition-all hover:bg-white/70" aria-label="Slide 2"></button>
-                <button onclick="goToSlide(2)" class="dot w-3 h-3 rounded-full bg-white/40 transition-all hover:bg-white/70" aria-label="Slide 3"></button>
+                <button onclick="goToSlide(0)" class="dot w-2.5 h-2.5 rounded-full bg-white transition-all scale-125" aria-label="Slide 1"></button>
+                <button onclick="goToSlide(1)" class="dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all hover:bg-white/70" aria-label="Slide 2"></button>
+                <button onclick="goToSlide(2)" class="dot w-2.5 h-2.5 rounded-full bg-white/40 transition-all hover:bg-white/70" aria-label="Slide 3"></button>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="500" class="mt-10 text-white/80 text-lg">
+            <div data-aos="fade-up" data-aos-delay="500" class="mt-10 text-white/80 text-base sm:text-lg">
                 <p>Call today: <a href="tel:+17187576928" class="font-bold text-white hover:underline">+1 (718) 757-6928</a></p>
             </div>
         </div>
@@ -169,7 +169,7 @@ $process = [
 
 
 <!-- ===== READY CTA ===== -->
-<section class="w-full bg-[#5E9EA8] py-20 px-4 sm:px-6 lg:px-8 font-sans">
+<section class="w-full bg-[#5E9EA8] py-10 md:py-20 px-4 sm:px-6 lg:px-8 font-sans">
     <div class="max-w-5xl mx-auto flex flex-col items-center">
         
         <!-- Header -->
