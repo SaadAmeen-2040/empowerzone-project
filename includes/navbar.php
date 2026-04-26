@@ -23,7 +23,7 @@ $currentPage = $page ?? 'home';
         </ul>
 
         <!-- Call Button -->
-        <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="call-btn">
+        <a href="contact.php" class="call-btn">
             <i class="fa fa-phone"></i> Call Now
         </a>
 

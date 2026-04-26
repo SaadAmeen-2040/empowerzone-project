@@ -60,10 +60,10 @@ $whyChooseUs = [
         </div>
 
         <div class="cta-buttons">
-            <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn-primary">
+            <a href="contact.php" class="btn-primary">
                 <i class="fa-solid fa-bolt"></i> Get Started Now
             </a>
-            <a href="#services" class="btn-secondary">How It Works</a>
+            <a href="about.php" class="btn-secondary">How It Works</a>
         </div>
     </main>
 </div>
@@ -75,7 +75,7 @@ $whyChooseUs = [
             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
             <div class="contact-text">
                 <span class="contact-label">Call or WhatsApp</span>
-                <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="contact-value"><?php echo SITE_PHONE; ?></a>
+                <a href="contact.php" class="contact-value"><?php echo SITE_PHONE; ?></a>
             </div>
         </div>
 
@@ -207,19 +207,19 @@ $whyChooseUs = [
     <p>Take one small step — and we'll handle the rest. No stress, no endless forms, no waiting on hold.</p>
 
     <div class="journey-cards">
-        <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="journey-card" data-aos="fade-up" data-aos-delay="0">
+        <a href="contact.php" class="journey-card" data-aos="fade-up" data-aos-delay="0">
             <div class="journey-icon"><i class="fa-solid fa-phone"></i></div>
             <h4>Call Us</h4>
             <p><?php echo SITE_PHONE; ?></p>
             <span>Mon–Fri, 9AM–6PM EST</span>
         </a>
-        <a href="https://wa.me/<?php echo ltrim(SITE_PHONE_RAW, '+'); ?>" class="journey-card" target="_blank" data-aos="fade-up" data-aos-delay="100">
+        <a href="contact.php" class="journey-card" target="_blank" data-aos="fade-up" data-aos-delay="100">
             <div class="journey-icon"><i class="fa-brands fa-whatsapp"></i></div>
             <h4>WhatsApp</h4>
             <p>Message Us</p>
             <span>Quick responses</span>
         </a>
-        <a href="mailto:<?php echo SITE_EMAIL_GMAIL; ?>" class="journey-card" data-aos="fade-up" data-aos-delay="200">
+        <a href="contact.php" class="journey-card" data-aos="fade-up" data-aos-delay="200">
             <div class="journey-icon"><i class="fa-regular fa-envelope"></i></div>
             <h4>Email</h4>
             <p><?php echo SITE_EMAIL_GMAIL; ?></p>

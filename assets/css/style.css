@@ -223,7 +223,6 @@ body {
 
 .hero-heading .highlight {
     color: var(--teal-light);
-    font-style: italic;
     position: relative;
     display: inline-block;
 }
@@ -889,7 +888,7 @@ body {
 
 /* Journey/Contact CTA */
 .journey-section {
-    background: #5c93a7; padding: 70px 20px 50px;
+    background: #0a4256f0; padding: 70px 20px 50px;
     text-align: center; color: white;
 }
 .journey-section h2 { font-size: 2rem; margin-bottom: 12px; font-weight: 900; }

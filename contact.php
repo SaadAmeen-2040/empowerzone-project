@@ -70,21 +70,21 @@ $pageDesc  = 'Get your benefits started with a free consultation. Contact Empowe
                         <div class="info-card-icon"><i class="fa fa-phone"></i></div>
                         <div class="info-card-body">
                             <h4>Call Us Now</h4>
-                            <p><a href="tel:<?php echo SITE_PHONE_RAW; ?>"><?php echo SITE_PHONE; ?></a></p>
+                            <p><a href="contact.php"><?php echo SITE_PHONE; ?></a></p>
                         </div>
                     </div>
                     <div class="info-card" data-aos="zoom-in" data-aos-delay="200">
                         <div class="info-card-icon"><i class="fab fa-whatsapp"></i></div>
                         <div class="info-card-body">
                             <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/<?php echo ltrim(SITE_PHONE_RAW, '+'); ?>" target="_blank">Message us directly</a></p>
+                            <p><a href="contact.php">Message us directly</a></p>
                         </div>
                     </div>
                     <div class="info-card" data-aos="zoom-in" data-aos-delay="300">
                         <div class="info-card-icon"><i class="fa fa-envelope"></i></div>
                         <div class="info-card-body">
                             <h4>Email Us</h4>
-                            <p><a href="mailto:<?php echo SITE_EMAIL_GMAIL; ?>"><?php echo SITE_EMAIL_GMAIL; ?></a></p>
+                            <p><a href="contact.php"><?php echo SITE_EMAIL_GMAIL; ?></a></p>
                         </div>
                     </div>
                     <div class="info-card" data-aos="zoom-in" data-aos-delay="400">

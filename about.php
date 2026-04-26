@@ -103,10 +103,10 @@ $testimonials = [
     <div class="container">
         <blockquote data-aos="fade-right">"Your benefits, your rights, your advocate. We're here to make it simple for you."</blockquote>
         <div class="cta-buttons" data-aos="fade-left">
-            <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn-primary">
+            <a href="contact.php" class="btn-primary">
                 <i class="fas fa-phone"></i> Call Now: <?php echo SITE_PHONE; ?>
             </a>
-            <a href="mailto:<?php echo SITE_EMAIL_GMAIL; ?>" class="btn-outline">
+            <a href="contact.php" class="btn-outline">
                 <i class="fas fa-envelope"></i> Email Us
             </a>
         </div>
@@ -339,10 +339,10 @@ document.addEventListener("DOMContentLoaded", function() {
             <p>You're not a case number, you're a person. We provide personalized support from real humans who understand your situation.</p>
             <br>
             <div class="cta-buttons">
-                <a href="tel:<?php echo SITE_PHONE_RAW; ?>" class="btn-primary">
+                <a href="contact.php" class="btn-primary">
                     <i class="fas fa-phone"></i> Call Now
                 </a>
-                <a href="mailto:<?php echo SITE_EMAIL_GMAIL; ?>" class="btn-outline">
+                <a href="contact.php" class="btn-outline">
                     <i class="fas fa-envelope"></i> Email Us
                 </a>
             </div>

@@ -47,15 +47,15 @@
                 <ul class="footer-contact-list">
                     <li>
                         <i class="fa fa-phone"></i>
-                        <a href="tel:<?php echo SITE_PHONE_RAW; ?>"><?php echo SITE_PHONE; ?></a>
+                        <a href="contact.php"><?php echo SITE_PHONE; ?></a>
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i>
-                        <a href="mailto:<?php echo SITE_EMAIL_INFO; ?>"><?php echo SITE_EMAIL_INFO; ?></a>
+                        <a href="contact.php"><?php echo SITE_EMAIL_INFO; ?></a>
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i>
-                        <a href="mailto:<?php echo SITE_EMAIL_GMAIL; ?>"><?php echo SITE_EMAIL_GMAIL; ?></a>
+                        <a href="contact.php"><?php echo SITE_EMAIL_GMAIL; ?></a>
                     </li>
                     <li>
                         <i class="fa fa-map-marker-alt"></i>
