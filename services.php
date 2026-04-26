@@ -80,7 +80,7 @@ $process = [
 <section class="relative w-full min-h-screen overflow-hidden bg-gray-900">
     <div id="slider-container" class="absolute inset-0">
         <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-100">
-            <img src="assets/images/food.png" alt="SNAP Benefits" class="w-full h-full object-cover">
+            <img src="assets/images/food.jpg" alt="SNAP Benefits" class="w-full h-full object-cover">
         </div>
         <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
             <img src="assets/images/hands.avif" alt="Cash Assistance" class="w-full h-full object-cover">

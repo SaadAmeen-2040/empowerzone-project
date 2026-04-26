@@ -41,7 +41,7 @@ $testimonials = [
 <!-- ===== ABOUT HERO ===== -->
 <section class="about-custom-hero">
     <div class="about-custom-hero-bg">
-        <img src="assets/images/food.png" alt="Family Background">
+        <img src="assets/images/food.jpg" alt="Family Background">
         <div class="about-custom-overlay-teal"></div>
         <div class="about-custom-overlay-gradient"></div>
     </div>

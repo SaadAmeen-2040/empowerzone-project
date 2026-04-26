@@ -21,7 +21,7 @@
 /* Hero Background: Dark overlay with image */
 .hero-bg {
     background: linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.68)),
-                url('../images/food.png') no-repeat center/cover;
+                url('../images/food.jpg') no-repeat center/cover;
     min-height: 100vh;
     display: flex;
     align-items: center;
