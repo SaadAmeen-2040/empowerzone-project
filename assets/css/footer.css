@@ -1,0 +1,143 @@
+/* =============================================
+   FOOTER
+   ============================================= */
+
+.site-footer {
+    background: #1a2e35;
+    color: rgba(255,255,255,0.75);
+    padding: 56px 24px 0;
+}
+
+.footer-inner { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1.2fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-logo { 
+    width: 52px; 
+    height: 52px; 
+    object-fit: contain; 
+    margin-bottom: 14px; 
+}
+
+.footer-brand p { 
+    font-size: 13px; 
+    line-height: 1.7; 
+    color: rgba(255,255,255,0.6); 
+    margin-bottom: 16px; 
+}
+
+.footer-badge {
+    background: rgba(255,255,255,0.08);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+}
+
+.footer-badge i { color: #3a9fa8; }
+
+.footer-col h4 { 
+    font-weight: 800; 
+    font-size: 14px; 
+    color: white; 
+    margin-bottom: 16px; 
+}
+
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color .2s;
+}
+.footer-col ul li a::before { content: "›"; color: #3a9fa8; font-size: 1rem; }
+.footer-col ul li a:hover { color: #3a9fa8; }
+
+.footer-services-list li a { flex-direction: column; align-items: flex-start; gap: 1px; }
+.footer-services-list li a::before { display: none; }
+
+.svc-name { font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 600; }
+.svc-desc { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+.footer-contact-list { list-style: none; }
+.footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 12px;
+}
+.footer-contact-list li i { color: #3a9fa8; margin-top: 3px; flex-shrink: 0; }
+.footer-contact-list a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color .2s; }
+.footer-contact-list a:hover { color: #3a9fa8; }
+
+.follow-label { font-size: 12px; color: rgba(255,255,255,0.5); margin: 14px 0 8px; }
+
+.social-links { display: flex; gap: 10px; }
+.social-links a {
+    width: 34px; height: 34px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    text-decoration: none;
+    transition: background .2s, color .2s;
+}
+.social-links a:hover { background: #3a9fa8; color: white; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 24px 0;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+}
+
+.footer-stats { display: flex; gap: 28px; }
+.footer-stat { text-align: center; }
+.footer-stat strong { display: block; font-size: 15px; color: rgba(255,255,255,0.8); font-weight: 800; }
+.footer-stat span { font-size: 11px; }
+
+.footer-legal { display: flex; gap: 16px; }
+.footer-legal a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 12px; transition: color .2s; }
+.footer-legal a:hover { color: #3a9fa8; }
+
+/* Footer Responsive */
+@media (max-width: 992px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .footer-bottom { flex-direction: column; text-align: center; gap: 24px; padding: 30px 0; }
+    .footer-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; }
+    .footer-stat strong { font-size: 14px; }
+    .footer-legal { flex-direction: column; gap: 10px; align-items: center; width: 100%; }
+}
+
+@media (max-width: 400px) {
+    .footer-stats { grid-template-columns: 1fr; }
+}

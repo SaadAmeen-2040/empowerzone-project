@@ -19,7 +19,25 @@
     <!-- AOS Animation Stylesheet -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+
+    <!-- Page Specific Styles -->
+    <?php 
+    $currentPage = basename($_SERVER['PHP_SELF']);
+    if ($currentPage == 'index.php') {
+        echo '<link rel="stylesheet" href="assets/css/home.css">';
+    } elseif ($currentPage == 'about.php') {
+        echo '<link rel="stylesheet" href="assets/css/about.css">';
+    } elseif ($currentPage == 'services.php') {
+        echo '<link rel="stylesheet" href="assets/css/services.css">';
+    } elseif ($currentPage == 'contact.php') {
+        echo '<link rel="stylesheet" href="assets/css/contact.css">';
+    }
+    ?>
+
 </head>
 <body>

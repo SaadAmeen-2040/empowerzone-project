@@ -1,0 +1,49 @@
+/* =============================================
+   BASE STYLES (Variables, Reset, Typography)
+   ============================================= */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --teal:        #2aadad;
+    --teal-dark:   #1e8c8c;
+    --teal-light:  #3ecfcf;
+    --white:       #ffffff;
+    --text-muted:  rgba(255,255,255,0.80);
+    --badge-bg:    rgba(0,0,0,0.45);
+    --badge-border:rgba(255,255,255,0.20);
+    --navbar-bg:   rgba(255,255,255,0.97);
+    --font:        'Inter', sans-serif;
+}
+
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: 100px; /* Clear fixed navbar when scrolling to anchors */
+}
+
+body {
+    font-family: var(--font);
+    color: var(--white);
+    background: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 24px; 
+}
+
+/* Global Grid Adjustments */
+@media (max-width: 992px) {
+    .container { padding: 0 20px; }
+}
+
+@media (max-width: 600px) {
+    .container { padding: 0 16px; }
+}
