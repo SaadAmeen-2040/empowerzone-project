@@ -148,13 +148,13 @@ $process = [
         <div class="services-grid" >
             <!-- Loop through the $services array defined at the top of the file to render each service card dynamically -->
             <?php foreach ($services as $svc): ?>
-                <div data-aos="fade-up" class="service-card">
+                <div data-aos="zoom-in" data-aos-delay="300" class="service-card">
                     <div class="service-icon" style="background: <?php echo $svc['color']; ?>">
                         <i class="fas <?php echo $svc['icon']; ?>"></i>
                     </div>
                     <h3><?php echo $svc['title']; ?></h3>
                     <p><?php echo $svc['desc']; ?></p>
-                    <div class="service-tags">
+                    <div data-aos="fade-up" data-aos-delay="600" class="service-tags">
                         <?php foreach ($svc['tags'] as $tag): ?>
                             <span class="service-tag"><?php echo $tag; ?></span>
                         <?php endforeach; ?>
