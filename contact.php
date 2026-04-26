@@ -2,7 +2,7 @@
 $page = 'contact';
 require_once 'includes/config.php';
 // ============================================================
-// CONTACT PAGE — pages/contact.php
+// CONTACT PAGE — contact.php
 // ============================================================
 $pageTitle = 'Contact Us – Empower Zone Consulting';
 $pageDesc  = 'Get your benefits started with a free consultation. Contact Empower Zone Consulting today — no upfront fees, bilingual support.';

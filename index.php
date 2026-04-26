@@ -2,19 +2,18 @@
 $page = 'home';
 require_once 'includes/config.php';
 // ============================================================
-// HOME PAGE — pages/home.php
-// Included by index.php via output buffering.
-// Set page-specific title and description here.
+// HOME PAGE — index.php
+// This is the standalone home page for the website.
 // ============================================================
 $pageTitle = 'Empower Zone – Your Benefits Advocate in New York';
 $pageDesc  = 'Sit back, relax, and let us handle everything. SNAP, Medicaid, Cash Assistance, WIC — we apply, follow up, and fight for your approval.';
 
 // --- Page Data Arrays ---
 $statistics = [
+    ['icon' => 'fa-solid fa-users',        'count' => '500+', 'title' => 'Families Helped'],
+    ['icon' => 'fa-solid fa-chart-column', 'count' => '98%',  'title' => 'Success Rate'],
+    ['icon' => 'fa-solid fa-dollar-sign',  'count' => '$2M+', 'title' => 'Benefits Secured'],
     ['icon' => 'fa-solid fa-award',        'count' => '2+',   'title' => 'Years Experience'],
-    ['icon' => 'fa-regular fa-face-smile', 'count' => '15+',  'title' => 'Happy Clients'],
-    ['icon' => 'fa-solid fa-users',        'count' => '3+',   'title' => 'Experts Network'],
-    ['icon' => 'fa-solid fa-chart-column', 'count' => '100%', 'title' => 'Success Rate'],
 ];
 
 $coreOffers = [

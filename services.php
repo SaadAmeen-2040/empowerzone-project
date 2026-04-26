@@ -3,7 +3,7 @@
 $page = 'services';
 require_once 'includes/config.php';
 // ============================================================
-// SERVICES PAGE — pages/services.php
+// SERVICES PAGE — services.php
 // ============================================================
 $pageTitle = 'Our Services – Empower Zone Consulting';
 $pageDesc  = 'Empower Zone helps you apply for SNAP, Cash Assistance, Medicaid, WIC and more. Full-service benefits consulting in New York.';
@@ -75,13 +75,13 @@ $process = [
 <section class="relative w-full min-h-screen overflow-hidden bg-gray-900">
     <div id="slider-container" class="absolute inset-0">
         <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-100">
-            <img src="assets\images\food.png" alt="SNAP Benefits" class="w-full h-full object-cover">
+            <img src="assets/images/food.png" alt="SNAP Benefits" class="w-full h-full object-cover">
         </div>
         <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-            <img src="assets\images\hands.avif" alt="Cash Assistance" class="w-full h-full object-cover">
+            <img src="assets/images/hands.avif" alt="Cash Assistance" class="w-full h-full object-cover">
         </div>
         <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-            <img src="assets\images\doctor.avif" alt="Medical Benefits" class="w-full h-full object-cover">
+            <img src="assets/images/doctor.avif" alt="Medical Benefits" class="w-full h-full object-cover">
         </div>
 
         <div class="absolute inset-0 bg-overlay"></div>

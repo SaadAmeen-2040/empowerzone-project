@@ -2,7 +2,7 @@
 $page = 'about';
 require_once 'includes/config.php';
 // ============================================================
-// ABOUT PAGE — pages/about.php
+// ABOUT PAGE — about.php
 // ============================================================
 $pageTitle = 'About Us – Empower Zone Consulting';
 $pageDesc  = 'Learn about Empower Zone — our mission is to help New York families navigate government benefits with ease, compassion, and expertise.';
