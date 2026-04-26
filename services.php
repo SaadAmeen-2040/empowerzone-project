@@ -91,7 +91,7 @@ $process = [
     <div class="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-20">
         <div class="max-w-4xl mx-auto text-center">
             
-            <div data-aos="fade-down" class="bg-white/20 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-medium mb-6 inline-flex items-center justify-center">
+            <div data-aos="fade-down" class="bg-white/20 backdrop-blur-md text-white px-5 py-2 mt-5  rounded-full text-sm font-medium mb-6 inline-flex items-center justify-center">
                 <span class="animate-pulse mr-2 text-white">•</span>YOUR BENEFITS ADVOCATE
             </div>
 
@@ -114,12 +114,12 @@ $process = [
             </div>
 
             <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="/contact">
-                    <button class="w-full sm:w-auto bg-white text-[#5E9EA8] px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 duration-300 shadow-lg">
+                <a href="contact.php">
+                    <button  class="w-full sm:w-auto bg-white text-[#5E9EA8] px-10 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105 duration-300 shadow-lg">
                         Free Consultation
                     </button>
                 </a>
-                <a href="/services">
+                <a href="#s-grid">
                     <button class="w-full sm:w-auto border-2 border-white text-white px-10 py-4 rounded-lg font-bold hover:bg-white hover:text-[#5E9EA8] transition-all transform hover:scale-105 duration-300">
                         View All Services
                     </button>
@@ -140,21 +140,21 @@ $process = [
 </section>
 
 <!-- ===== SERVICES GRID ===== -->
-<section class="services-section">
+<section data-aos="fade-up"  id="s-grid" class="services-section">
     <div class="container">
-        <h2 class="section-title">Everything We Offer</h2>
+        <h2 class="section-title"  >Everything We Offer</h2>
         <p class="section-subtitle">From SNAP to Medicaid, Cash Assistance to WIC — we cover every major benefit program available to New York families.</p>
 
-        <div class="services-grid">
+        <div class="services-grid" >
             <!-- Loop through the $services array defined at the top of the file to render each service card dynamically -->
             <?php foreach ($services as $svc): ?>
-                <div class="service-card">
+                <div data-aos="zoom-in" data-aos-delay="300" class="service-card">
                     <div class="service-icon" style="background: <?php echo $svc['color']; ?>">
                         <i class="fas <?php echo $svc['icon']; ?>"></i>
                     </div>
                     <h3><?php echo $svc['title']; ?></h3>
                     <p><?php echo $svc['desc']; ?></p>
-                    <div class="service-tags">
+                    <div data-aos="fade-up" data-aos-delay="600" class="service-tags">
                         <?php foreach ($svc['tags'] as $tag): ?>
                             <span class="service-tag"><?php echo $tag; ?></span>
                         <?php endforeach; ?>
