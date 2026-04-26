@@ -119,7 +119,7 @@ $process = [
                         Free Consultation
                     </button>
                 </a>
-                <a href="#servives-grid">
+                <a href="#s-grid">
                     <button class="w-full sm:w-auto border-2 border-white text-white px-10 py-4 rounded-lg font-bold hover:bg-white hover:text-[#5E9EA8] transition-all transform hover:scale-105 duration-300">
                         View All Services
                     </button>
@@ -140,9 +140,9 @@ $process = [
 </section>
 
 <!-- ===== SERVICES GRID ===== -->
-<section data-aos="fade-up" class="services-section">
+<section data-aos="fade-up"  id="s-grid" class="services-section">
     <div class="container">
-        <h2 class="section-title"  id="servives-grid" >Everything We Offer</h2>
+        <h2 class="section-title"  >Everything We Offer</h2>
         <p class="section-subtitle">From SNAP to Medicaid, Cash Assistance to WIC — we cover every major benefit program available to New York families.</p>
 
         <div class="services-grid" >
