@@ -101,24 +101,19 @@ $testimonials = [
         <div class="care-box" data-aos="zoom-in">
             <h3>We Care About You</h3>
             <p>You're not a case number, you're a person. We provide personalized support from real humans who understand your situation.</p>
+            
+            <div class="care-cta-btns">
+                <a href="contact.php" class="care-btn-teal">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <a href="contact.php" class="btn-outline-teal">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ===== CTA BANNER ===== -->
-<section class="cta-banner-section" data-aos="fade-up">
-    <div class="container">
-        <blockquote data-aos="fade-right">"Your benefits, your rights, your advocate. We're here to make it simple for you."</blockquote>
-        <div class="cta-buttons" data-aos="fade-left">
-            <a href="contact.php" class="btn-primary">
-                <i class="fas fa-phone"></i> Call Now: <?php echo SITE_PHONE; ?>
-            </a>
-            <a href="contact.php" class="btn-outline">
-                <i class="fas fa-envelope"></i> Email Us
-            </a>
-        </div>
-    </div>
-</section>
 
 <!-- ===== SUCCESS STORIES (CUSTOM) ===== -->
 <section class="custom-stories-section">
@@ -180,9 +175,9 @@ $testimonials = [
         </div>
 
         <!-- Dots -->
-        <div class="custom-dots" data-aos="fade-up" data-aos-delay="400">
+        <div class="custom-pagination-dots" data-aos="fade-up" data-aos-delay="400">
             <?php foreach ($testimonials as $i => $t): ?>
-                <button class="<?php echo $i === 0 ? 'active' : ''; ?>"></button>
+                <button class="p-dot <?php echo $i === 0 ? 'active' : ''; ?>"></button>
             <?php endforeach; ?>
         </div>
     </div>
@@ -207,7 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const programEl = document.getElementById("about-slider-program");
     
     const thumbCards = document.querySelectorAll(".custom-thumb-card");
-    const dots = document.querySelectorAll(".custom-dots button");
+    const dots = document.querySelectorAll(".custom-pagination-dots .p-dot");
     const prevBtn = document.getElementById("about-prev-btn");
     const nextBtn = document.getElementById("about-next-btn");
     
@@ -363,12 +358,12 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="care-box" data-aos="zoom-in">
             <h3>We Care About You</h3>
             <p>You're not a case number, you're a person. We provide personalized support from real humans who understand your situation.</p>
-            <br>
-            <div class="cta-buttons">
-                <a href="contact.php" class="btn-primary">
+            
+            <div class="care-cta-btns">
+                <a href="contact.php" class="care-btn-teal">
                     <i class="fas fa-phone"></i> Call Now
                 </a>
-                <a href="contact.php" class="btn-outline">
+                <a href="contact.php" class="btn-outline-teal">
                     <i class="fas fa-envelope"></i> Email Us
                 </a>
             </div>

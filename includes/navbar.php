@@ -47,6 +47,9 @@ $currentPage = $page ?? 'home';
         <a href="about.php"    <?php echo ($currentPage === 'about')    ? 'class="active"' : ''; ?>>About Us</a>
         <a href="services.php" <?php echo ($currentPage === 'services') ? 'class="active"' : ''; ?>>Services</a>
         <a href="contact.php"  <?php echo ($currentPage === 'contact')  ? 'class="active"' : ''; ?>>Contact</a>
+        <a href="contact.php" class="mobile-call-btn">
+            <i class="fa fa-phone"></i> Call Now
+        </a>
     </div>
 </nav>
 

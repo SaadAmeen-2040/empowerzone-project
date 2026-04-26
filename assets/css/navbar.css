@@ -158,3 +158,21 @@
     .call-btn { display: none; }
 }
 
+/* Mobile-specific Call Button in dropdown */
+.mobile-call-btn {
+    margin: 15px 20px;
+    background: #5E9EA8 !important; 
+    color: white !important;
+    text-align: center;
+    border-radius: 12px;
+    padding: 14px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(107, 33, 168, 0.2);
+}
+
+.mobile-call-btn i {
+    font-size: 18px;
+}

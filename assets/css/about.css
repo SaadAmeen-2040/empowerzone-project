@@ -109,13 +109,71 @@
 
 .care-box h3 {
     font-weight: 800;
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 22px;
+    margin-bottom: 12px;
     color: #2c7d85;
 }
 
 .care-box p {
-    color: #667777;
+    color: #4b5563;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.care-cta-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 20px;
+}
+
+/* Call Now Button Style (Teal) */
+.care-btn-teal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    background: #5E9EA8;
+    color: white;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(94, 158, 168, 0.2);
+}
+
+.care-btn-teal i {
+    font-size: 18px;
+}
+
+.care-btn-teal:hover {
+    background: #3D7C88;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(94, 158, 168, 0.3);
+    color: white;
+}
+
+/* Email Us Outline Button Style */
+.btn-outline-teal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    border: 2px solid #5E9EA8;
+    border-radius: 99px;
+    color: #3D7C88;
+    font-weight: 700;
+    font-size: 16px;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-outline-teal:hover {
+    background: rgba(94, 158, 168, 0.1);
+    border-color: #3D7C88;
 }
 
 .cta-banner-section {
@@ -538,6 +596,100 @@
     background: #4A8D99;
 }
 
+/* Thumbnail Grid / Slider Navigation */
+.custom-thumb-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 32px;
+}
+
+.custom-thumb-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-thumb-card:hover {
+    border-color: #5E9EA8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.custom-thumb-card.active {
+    border-color: #5E9EA8;
+    box-shadow: 0 4px 12px rgba(94, 158, 168, 0.15);
+}
+
+.custom-thumb-card img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.custom-thumb-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 2px;
+}
+
+.custom-thumb-card p {
+    font-size: 11px;
+    color: #5E9EA8;
+    font-weight: 600;
+}
+
+/* Active Dot Indicator */
+.custom-active-dot {
+    width: 6px;
+    height: 6px;
+    background: #5E9EA8;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Pagination Dots (Bottom) */
+.custom-pagination-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.p-dot {
+    width: 10px;
+    height: 10px;
+    background: #CBD5E1;
+    /* Softer gray for inactive */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    padding: 0;
+}
+
+.p-dot.active {
+    background: #3D7C88;
+    /* More vibrant teal for active */
+    transform: scale(1.3);
+    box-shadow: 0 0 0 4px rgba(61, 124, 136, 0.2);
+}
+
 /* 8. About Page Responsive: Handles complex layout shifts */
 @media (max-width: 992px) {
     .cards-grid-4 {
@@ -548,7 +700,8 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    .thumb-grid {
+    .thumb-grid,
+    .custom-thumb-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -569,6 +722,11 @@
 
     .custom-featured-right blockquote {
         text-align: center;
+    }
+
+    .care-cta-btns {
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -595,7 +753,7 @@
     .thumb-grid,
     .custom-thumb-container {
         grid-template-columns: 1fr !important;
-        gap: 16px;
+        gap: 20px;
     }
 
     .mission-box {
