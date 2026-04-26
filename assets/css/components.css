@@ -1,8 +1,11 @@
-/* =============================================
-   SHARED COMPONENTS (Buttons, Page Hero, etc.)
-   ============================================= */
+/* ============================================================
+   SHARED COMPONENTS STYLES
+   - Page Hero sections for sub-pages
+   - Section headers and divider elements
+   - Reusable button styles
+   ============================================================ */
 
-/* Page Hero (about/services/contact) */
+/* 1. Page Hero: Large header section used on About, Services, and Contact pages */
 .page-hero {
     min-height: 55vh;
     display: flex;
@@ -13,10 +16,15 @@
     background-size: cover;
     background-position: center;
 }
+
+/* Light version of the page hero (e.g., used when no background image is set) */
 .page-hero--light {
     background: linear-gradient(135deg, #e8f5f6 0%, #f4f8f8 100%);
 }
+
 .page-hero-content { max-width: 720px; }
+
+/* Small badge appearing above the title in the hero */
 .page-hero-badge {
     display: inline-block;
     background: #e8f5f6;
@@ -29,6 +37,8 @@
     border-radius: 20px;
     margin-bottom: 20px;
 }
+
+/* Text styles for Light Hero variant */
 .page-hero--light .page-hero-content h1 {
     font-family: var(--font);
     font-size: clamp(28px, 4vw, 52px);
@@ -43,6 +53,8 @@
     margin: 0 auto;
     line-height: 1.75;
 }
+
+/* Text styles for Dark/Image Hero variant */
 .page-hero[style] .page-hero-content h1 {
     font-family: var(--font);
     font-size: clamp(26px, 4vw, 48px);
@@ -56,7 +68,7 @@
     font-style: italic;
 }
 
-/* Section helpers */
+/* 2. Section Helpers: Consistent styling for section titles and subtitles */
 .section-title {
     font-family: var(--font);
     font-size: clamp(22px, 3vw, 34px);
@@ -74,6 +86,8 @@
     line-height: 1.7;
 }
 .teal-text { color: #3a9fa8; }
+
+/* Small decorative divider below titles */
 .teal-divider {
     width: 50px; height: 3px;
     background: #3a9fa8;
@@ -81,7 +95,7 @@
     border-radius: 2px;
 }
 
-/* Buttons shared */
+/* 3. Shared Button Styles */
 .btn-outline {
     display: inline-flex;
     align-items: center;
@@ -96,6 +110,7 @@
     text-decoration: none;
 }
 .btn-outline:hover { background: #3a9fa8; color: white; }
+
 .btn-teal {
     display: inline-flex;
     align-items: center;
@@ -113,9 +128,10 @@
 }
 .btn-teal:hover { background: #2c7d85; transform: translateY(-2px); }
 
-/* Responsive adjustments */
+/* Responsive adjustments for shared components */
 @media (max-width: 600px) {
     .page-hero { padding: 130px 12px 40px; min-height: auto; }
     .page-hero-content h1 { font-size: 24px !important; word-break: break-word; }
     .page-hero-content p { font-size: 14px !important; }
 }
+

@@ -1,8 +1,14 @@
-/* =============================================
-   HOME PAGE SECTIONS
-   ============================================= */
+/* ============================================================
+   HOME PAGE SECTION STYLES
+   - Interactive Hero section with background video/image
+   - Contact bar with quick actions
+   - Statistics and Core Offers grids
+   - Why Choose Us section
+   - Testimonial slider layout
+   - Journey/CTA section
+   ============================================================ */
 
-/* Hero */
+/* 1. Hero Section: Main entrance section of the home page */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -12,6 +18,7 @@
     overflow: hidden;
 }
 
+/* Hero Background: Dark overlay with image */
 .hero-bg {
     background: linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.68)),
                 url('../images/food.png') no-repeat center/cover;
@@ -36,7 +43,7 @@
     gap: 0;
 }
 
-/* Brand pill */
+/* Brand Pill: Animated pill above the main headline */
 .brand-pill {
     display: inline-flex;
     align-items: center;
@@ -54,6 +61,7 @@
     text-transform: uppercase;
 }
 
+/* Animated dot inside the brand pill */
 .pill-dot {
     width: 6px;
     height: 6px;
@@ -69,7 +77,7 @@
     50%       { transform: scale(1.4); opacity: 0.7; }
 }
 
-/* Headline */
+/* Hero Headline: Dynamic font size using clamp() */
 .hero-heading {
     font-size: clamp(32px, 5.5vw, 64px);
     font-weight: 900;
@@ -85,6 +93,7 @@
     display: inline-block;
 }
 
+/* Decorative underline for the highlighted word */
 .hero-heading .highlight::after {
     content: '';
     position: absolute;
@@ -96,7 +105,7 @@
     border-radius: 2px;
 }
 
-/* Sub-text */
+/* Hero Sub-text: Responsive description */
 .hero-sub {
     font-size: clamp(15px, 1.8vw, 18px);
     color: var(--text-muted);
@@ -106,7 +115,7 @@
     line-height: 1.7;
 }
 
-/* Feature badges row */
+/* Feature Badges: Row of small information chips */
 .feature-badges {
     display: flex;
     flex-wrap: wrap;
@@ -144,7 +153,7 @@
     transform: translateY(-2px);
 }
 
-/* CTA Buttons */
+/* Hero Action Buttons */
 .cta-buttons {
     display: flex;
     gap: 16px;
@@ -175,6 +184,7 @@
     box-shadow: 0 8px 28px rgba(42,173,173,0.4);
 }
 
+/* Arrow animation inside button */
 .btn-primary i {
     transition: transform 0.2s;
 }
@@ -204,7 +214,7 @@
     transform: translateY(-2px);
 }
 
-/* Contact Bar */
+/* 2. Contact Bar: Horizontal bar with quick contact info */
 .contact-bar {
     background: var(--white);
     padding: 0 24px;
@@ -287,31 +297,7 @@
     flex-shrink: 0;
 }
 
-.btn-consult {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--teal);
-    color: var(--white);
-    font-size: 15px;
-    font-weight: 700;
-    padding: 14px 32px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-family: var(--font);
-    white-space: nowrap;
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 18px rgba(42,173,173,0.30);
-    flex-shrink: 0;
-}
-
-.btn-consult:hover {
-    background: var(--teal-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 26px rgba(42,173,173,0.40);
-}
-
-/* Stats Section */
+/* 3. Stats Section: Grid of achievement numbers */
 .stats-section { padding: 60px 24px; background: white; }
 .stats-grid {
     display: grid;
@@ -330,7 +316,7 @@
 .stat-card h3 { font-size: 2rem; font-weight: 900; color: #1a2a2a; }
 .stat-card p { color: #777; font-size: 14px; font-weight: 600; }
 
-/* Core Offers */
+/* 4. Core Offers: List of primary services with icons */
 .core-section { padding: 80px 24px; background: white; }
 .core-grid {
     display: grid;
@@ -351,6 +337,8 @@
 }
 .core-card h4 { font-size: 16px; color: #1a2a2a; margin-bottom: 10px; font-weight: 700; }
 .core-card p { font-size: 14px; color: #666; line-height: 1.5; }
+
+/* "And More" box below the core grid */
 .core-more-box {
     background: #fbfdfd; border: 1px solid #eef5f4;
     padding: 30px; border-radius: 15px; text-align: center; margin-top: 10px;
@@ -358,7 +346,7 @@
 .core-more-box h4 { font-size: 18px; color: #1a2a2a; margin-bottom: 10px; font-weight: 700; }
 .core-more-box p { font-size: 14px; color: #666; line-height: 1.6; max-width: 800px; margin: 0 auto; }
 
-/* Why Section */
+/* 5. Why Choose Us: Feature cards highlighting value propositions */
 .why-section { background: #f4f8f7; padding: 80px 24px;  }
 .why-grid {
     display: grid;
@@ -381,7 +369,7 @@
 .why-card h4 { font-size: 16px; color: #1a2a2a; margin-bottom: 12px; font-weight: 700; }
 .why-card p { font-size: 14px; color: #666; line-height: 1.6; }
 
-/* Testimonials */
+/* 6. Testimonials Section: Slider layout */
 .testimonials-section { padding: 80px 24px; background: white; }
 .testimonial-slider {
     display: flex; align-items: center;
@@ -395,6 +383,7 @@
     position: relative; text-align: center;
     max-width: 700px; width: 100%;
 }
+/* Large quote icon background element */
 .quote-icon { position: absolute; top: 25px; right: 35px; font-size: 50px; color: #f1f6f5; }
 .stars i { color: #fcc21b; font-size: 16px; margin: 0 2px 20px; }
 .testimony-text { font-style: italic; color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
@@ -403,6 +392,8 @@
 .t-tag { padding: 4px 12px; font-size: 12px; border-radius: 20px; font-weight: 600; }
 .tag-label { background: transparent; color: #3a9fa8; }
 .tag-approved { background: #e8f5f6; color: #3a9fa8; display: flex; align-items: center; gap: 4px; }
+
+/* Slider control buttons */
 .slider-btn {
     background: white; border: 1px solid #eee;
     width: 45px; height: 45px; border-radius: 50%;
@@ -412,9 +403,13 @@
     flex-shrink: 0;
 }
 .slider-btn:hover { background: #3a9fa8; color: white; }
+
+/* Pagination dots for the slider */
 .slider-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 50px; }
 .dot { width: 10px; height: 10px; border-radius: 50%; background: #ddd; cursor: pointer; }
 .dot.active { background: #3a9fa8; }
+
+/* Ready CTA Box: Final call to action in the testimonial section */
 .ready-cta-box {
     background: #f7fbfc; border: 1px solid #ecf3f4;
     border-radius: 15px; text-align: center;
@@ -423,13 +418,15 @@
 .ready-cta-box h3 { font-size: 22px; color: #1a2a2a; margin-bottom: 12px; font-weight: 800; }
 .ready-cta-box p { color: #666; font-size: 15px; margin-bottom: 24px; }
 
-/* Journey/Contact CTA */
+/* 7. Journey Section: Footer CTA with dark teal background */
 .journey-section {
     background: #0a4256f0; padding: 70px 20px 50px;
     text-align: center; color: white;
 }
 .journey-section h2 { font-size: 2rem; margin-bottom: 12px; font-weight: 900; }
 .journey-section > p { max-width: 650px; margin: 0 auto 50px; font-size: 16px; color: rgba(255,255,255,.85); }
+
+/* Grid of cards linking to contact options */
 .journey-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -453,6 +450,8 @@
 .journey-card h4 { font-size: 14px; font-weight: 400; margin-bottom: 8px; }
 .journey-card p { font-weight: 700; font-size: 16px; margin-bottom: 6px; word-break: break-all; }
 .journey-card span { font-size: 12px; opacity: .8; }
+
+/* Information box explaining why to contact */
 .journey-why-box {
     background: rgba(255,255,255,.1);
     border: 1px solid rgba(255,255,255,.2);
@@ -466,7 +465,7 @@
 .journey-why-grid div { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,.9); }
 .journey-quote { font-style: italic; color: rgba(255,255,255,.85); font-size: 1.1rem; padding-top: 10px; }
 
-/* Home Page Responsive */
+/* 8. Home Page Responsive: Tweaks grid layouts for smaller screens */
 @media (max-width: 992px) {
     .core-grid { grid-template-columns: 1fr 1fr; }
     .why-grid { grid-template-columns: 1fr 1fr; }
@@ -505,7 +504,8 @@
     .badge { width: 100%; justify-content: center; }
 }
 
-/* Remove line break on small screens */
+/* Helper to hide line breaks on smaller devices */
 @media (max-width: 768px) {
     .br-md { display: none; }
 }
+

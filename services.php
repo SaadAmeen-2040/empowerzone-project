@@ -1,13 +1,17 @@
- 
 <?php
+/**
+ * SERVICES PAGE - services.php
+ * This page lists the various benefit programs the company assists with.
+ */
+
 $page = 'services';
 require_once 'includes/config.php';
-// ============================================================
-// SERVICES PAGE — services.php
-// ============================================================
+
+// SEO Meta Data
 $pageTitle = 'Our Services – Empower Zone Consulting';
 $pageDesc  = 'Empower Zone helps you apply for SNAP, Cash Assistance, Medicaid, WIC and more. Full-service benefits consulting in New York.';
 
+// List of all benefit programs offered as services
 $services = [
     [
         'icon'  => 'fa-utensils',
@@ -53,6 +57,7 @@ $services = [
     ],
 ];
 
+// The step-by-step process of working with the company
 $process = [
     ['step' => '01', 'title' => 'Free Consultation',    'desc' => 'Call or message us. Tell us your situation — we listen and explain exactly what you qualify for.'],
     ['step' => '02', 'title' => 'Document Collection',  'desc' => 'We tell you exactly what documents you need and walk you through gathering them — no guesswork.'],
@@ -222,10 +227,15 @@ $process = [
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Initialize Animations
+    /**
+     * Services Page Animations & Slider
+     * Initializes AOS for scroll animations and a custom hero slider.
+     */
+    
+    // 1. Initialize Scroll Animations
     AOS.init({ duration: 1000, once: true });
 
-    // Slider Logic
+    // 2. Slider Configuration & Logic
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     const titles = ["Cash Assistance Programs", "SNAP Benefits Assistance", "Medical Coverage Support"];
@@ -237,28 +247,33 @@ $process = [
     
     let currentSlide = 0;
 
+    /**
+     * Changes the current slide and updates associated text/navigation.
+     * @param {number} index - The index of the slide to display.
+     */
     function goToSlide(index) {
-        // Reset old slide
+        // 3. Reset Current State: Hides old slide and deactivates old dot
         slides[currentSlide].classList.replace('opacity-100', 'opacity-0');
         dots[currentSlide].classList.replace('bg-white', 'bg-white/40');
         dots[currentSlide].classList.remove('scale-125');
 
-        // Set new slide
+        // 4. Set New State: Shows new slide and activates new dot
         currentSlide = index;
         slides[currentSlide].classList.replace('opacity-0', 'opacity-100');
         dots[currentSlide].classList.replace('bg-white/40', 'bg-white');
         dots[currentSlide].classList.add('scale-125');
 
-        // Update Text
+        // 5. Update UI Text: Changes headline and description based on slide
         document.getElementById('main-title').innerText = titles[currentSlide];
         document.getElementById('sub-text-1').innerText = subTexts[currentSlide];
     }
 
-    // Auto-play slider
+    // 6. Auto-play: Automatically switches slides every 5 seconds
     setInterval(() => {
         let next = (currentSlide + 1) % slides.length;
         goToSlide(next);
     }, 5000);
 </script>
+
 
 <?php include 'includes/footer.php'; ?>

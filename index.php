@@ -1,14 +1,20 @@
 <?php
+/**
+ * HOME PAGE - index.php
+ * This is the primary landing page of the website.
+ * It features a hero section, key statistics, core offerings, and client testimonials.
+ */
+
 $page = 'home';
 require_once 'includes/config.php';
-// ============================================================
-// HOME PAGE — index.php
-// This is the standalone home page for the website.
-// ============================================================
+
+// SEO Meta Data
 $pageTitle = 'Empower Zone – Your Benefits Advocate in New York';
 $pageDesc  = 'Sit back, relax, and let us handle everything. SNAP, Medicaid, Cash Assistance, WIC — we apply, follow up, and fight for your approval.';
 
 // --- Page Data Arrays ---
+
+// 1. Success metrics shown in the stats section
 $statistics = [
     ['icon' => 'fa-solid fa-users',        'count' => '500+', 'title' => 'Families Helped'],
     ['icon' => 'fa-solid fa-chart-column', 'count' => '98%',  'title' => 'Success Rate'],
@@ -16,6 +22,7 @@ $statistics = [
     ['icon' => 'fa-solid fa-award',        'count' => '2+',   'title' => 'Years Experience'],
 ];
 
+// 2. High-level service categories for the core offers section
 $coreOffers = [
     ['icon' => 'fa-regular fa-compass',     'title' => '🎯 Clear Guidance',        'desc' => 'We explain the process in simple steps so you always know what\'s happening with your application.'],
     ['icon' => 'fa-solid fa-user-tie',      'title' => '🤝 Personal Support',      'desc' => 'We work with you one-on-one, collect your documents, and make sure nothing is missing.'],
@@ -24,6 +31,7 @@ $coreOffers = [
     ['icon' => 'fa-regular fa-heart',       'title' => '💖 Care & Trust',           'desc' => 'You\'re more than just a case number. We treat every client with respect, dignity, and dedication.'],
 ];
 
+// 3. Unique selling points for the "Why Choose Us" section
 $whyChooseUs = [
     ['icon' => 'fa-regular fa-clock',      'title' => '⏳ Save Time',          'desc' => 'No more waiting on hold, no office visits, and no piles of paperwork. We handle the entire application process for you.'],
     ['icon' => 'fa-solid fa-location-dot', 'title' => '📍 Local Knowledge',    'desc' => 'We know how the system works and make sure your application is filed correctly the first time.'],

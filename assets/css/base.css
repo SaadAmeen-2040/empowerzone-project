@@ -1,13 +1,18 @@
-/* =============================================
-   BASE STYLES (Variables, Reset, Typography)
-   ============================================= */
+/* ============================================================
+   BASE STYLES
+   - CSS Variables for consistent branding
+   - Global Resets & Typography
+   - Reusable Layout Containers
+   ============================================================ */
 
+/* 1. Global Reset: Removes default browser margins/padding and sets border-box */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* 2. Design Tokens: Centralized color and font variables */
 :root {
     --teal:        #2aadad;
     --teal-dark:   #1e8c8c;
@@ -20,9 +25,10 @@
     --font:        'Inter', sans-serif;
 }
 
+/* 3. HTML/Body Defaults: Sets smooth scroll and base typography */
 html { 
     scroll-behavior: smooth; 
-    scroll-padding-top: 100px; /* Clear fixed navbar when scrolling to anchors */
+    scroll-padding-top: 100px; /* Ensures anchor links don't get hidden behind fixed navbar */
 }
 
 body {
@@ -30,16 +36,17 @@ body {
     color: var(--white);
     background: #ffffff;
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
 }
 
+/* 4. Container: Controls the maximum width of the content area */
 .container { 
     max-width: 1100px; 
     margin: 0 auto; 
     padding: 0 24px; 
 }
 
-/* Global Grid Adjustments */
+/* 5. Responsive Grid Adjustments: Tweaks container padding for mobile devices */
 @media (max-width: 992px) {
     .container { padding: 0 20px; }
 }
@@ -47,3 +54,4 @@ body {
 @media (max-width: 600px) {
     .container { padding: 0 16px; }
 }
+

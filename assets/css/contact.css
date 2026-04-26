@@ -1,24 +1,37 @@
-/* =============================================
-   CONTACT PAGE
-   ============================================= */
+/* ============================================================
+   CONTACT PAGE SECTION STYLES
+   - Split layout with Form and Info columns
+   - Stylized form inputs with focus effects
+   - Grid of quick-contact info cards
+   - "Why Contact" value proposition box
+   ============================================================ */
 
+/* 1. Main Contact Section: Outer wrapper */
 .contact-section { background: #f4f7f8; padding: 0 24px 70px; }
+
+/* 2-Column Wrapper: Form on the left, Info on the right */
 .contact-wrapper {
     max-width: 1100px; margin: 0 auto;
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 32px; align-items: start;
 }
+
+/* 2. Form Card: Elevation and padding for the contact form */
 .form-card {
     background: white; border-radius: 16px;
     padding: 36px 32px;
     box-shadow: 0 2px 24px rgba(0,0,0,.07);
 }
+
 .form-card-title {
     display: flex; align-items: center; gap: 10px;
     font-size: 17px; font-weight: 700; color: #1a2a2a; margin-bottom: 24px;
 }
 .form-card-title i { color: #3a9fa8; }
+
 .form-group { margin-bottom: 14px; }
+
+/* Input Styling: Consistent borders and typography */
 .form-group input, .form-group select, .form-group textarea {
     width: 100%; border: 1.5px solid #e2eaea;
     border-radius: 8px; padding: 13px 16px;
@@ -28,6 +41,8 @@
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #3a9fa8; }
 .form-group textarea { resize: vertical; min-height: 110px; }
+
+/* Submit Button: Full-width button with hover lift */
 .btn-submit {
     width: 100%; display: flex; align-items: center;
     justify-content: center; gap: 10px;
@@ -41,7 +56,10 @@
 }
 .btn-submit:hover { background: #3a9fa8; transform: translateY(-2px); }
 
+/* 3. Contact Info Column: Sidebar on the right */
 .contact-right { display: flex; flex-direction: column; gap: 14px; }
+
+/* Info Cards Grid: Quick links for phone, email, etc. */
 .info-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .info-card {
     background: white; border-radius: 14px;
@@ -51,6 +69,7 @@
     transition: transform .2s, box-shadow .2s;
 }
 .info-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.10); }
+
 .info-card-icon {
     width: 40px; height: 40px; background: #e8f5f6;
     border-radius: 10px; display: flex;
@@ -61,13 +80,16 @@
 .info-card-body p { font-size: 12px; color: #667777; line-height: 1.5; }
 .info-card-body a { color: #667777; text-decoration: none; transition: color .2s; }
 .info-card-body a:hover { color: #3a9fa8; }
+
+/* Why Box: Value proposition summary */
 .why-box { background: white; border-radius: 14px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
 .why-box h3 { font-size: 15px; font-weight: 700; color: #1a2a2a; margin-bottom: 14px; }
 .why-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .why-list li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #1a2a2a; }
+/* Decorative bullets for why-list */
 .why-list li::before { content:""; width:8px; height:8px; background:#3a9fa8; border-radius:50%; flex-shrink:0; }
 
-/* Contact Page Responsive */
+/* 4. Contact Page Responsive: Switches from 2-column to 1-column */
 @media (max-width: 992px) {
     .contact-wrapper { grid-template-columns: 1fr; }
 }
@@ -78,3 +100,4 @@
     .contact-wrapper { gap: 16px; }
     .info-cards-grid { grid-template-columns: 1fr !important; gap: 16px; }
 }
+

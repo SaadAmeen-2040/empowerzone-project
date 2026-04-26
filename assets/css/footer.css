@@ -1,7 +1,11 @@
-/* =============================================
-   FOOTER
-   ============================================= */
+/* ============================================================
+   FOOTER STYLES
+   - Dark themed footer with grid layout
+   - Social link icons with hover effects
+   - Responsive adjustments for mobile
+   ============================================================ */
 
+/* 1. Main Footer Wrapper */
 .site-footer {
     background: #1a2e35;
     color: rgba(255,255,255,0.75);
@@ -13,6 +17,7 @@
     margin: 0 auto; 
 }
 
+/* 2. Footer Grid: Responsive columns for different sections */
 .footer-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr 1.2fr 1.2fr;
@@ -35,6 +40,7 @@
     margin-bottom: 16px; 
 }
 
+/* Trusted Badge in Footer */
 .footer-badge {
     background: rgba(255,255,255,0.08);
     display: inline-flex;
@@ -48,6 +54,7 @@
 
 .footer-badge i { color: #3a9fa8; }
 
+/* 3. Footer Columns: Headers and Link lists */
 .footer-col h4 { 
     font-weight: 800; 
     font-size: 14px; 
@@ -66,6 +73,7 @@
     gap: 6px;
     transition: color .2s;
 }
+/* Bullet point replacement with chevron */
 .footer-col ul li a::before { content: "›"; color: #3a9fa8; font-size: 1rem; }
 .footer-col ul li a:hover { color: #3a9fa8; }
 
@@ -75,6 +83,7 @@
 .svc-name { font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 600; }
 .svc-desc { font-size: 11px; color: rgba(255,255,255,0.4); }
 
+/* 4. Footer Contact Info */
 .footer-contact-list { list-style: none; }
 .footer-contact-list li {
     display: flex;
@@ -90,6 +99,7 @@
 
 .follow-label { font-size: 12px; color: rgba(255,255,255,0.5); margin: 14px 0 8px; }
 
+/* 5. Social Links: Circular icons with background hover */
 .social-links { display: flex; gap: 10px; }
 .social-links a {
     width: 34px; height: 34px;
@@ -105,6 +115,7 @@
 }
 .social-links a:hover { background: #3a9fa8; color: white; }
 
+/* 6. Footer Bottom: Copyright and legal links */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -125,7 +136,7 @@
 .footer-legal a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 12px; transition: color .2s; }
 .footer-legal a:hover { color: #3a9fa8; }
 
-/* Footer Responsive */
+/* 7. Footer Responsive: Collapses grid for mobile */
 @media (max-width: 992px) {
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -141,3 +152,4 @@
 @media (max-width: 400px) {
     .footer-stats { grid-template-columns: 1fr; }
 }
+

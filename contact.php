@@ -1,9 +1,13 @@
 <?php
+/**
+ * CONTACT PAGE - contact.php
+ * This page provides a contact form and company contact information for consultations.
+ */
+
 $page = 'contact';
 require_once 'includes/config.php';
-// ============================================================
-// CONTACT PAGE — contact.php
-// ============================================================
+
+// SEO Meta Data
 $pageTitle = 'Contact Us – Empower Zone Consulting';
 $pageDesc  = 'Get your benefits started with a free consultation. Contact Empower Zone Consulting today — no upfront fees, bilingual support.';
 ?>

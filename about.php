@@ -1,12 +1,17 @@
 <?php
+/**
+ * ABOUT PAGE - about.php
+ * This page introduces the team, explains the mission, and showcases success stories.
+ */
+
 $page = 'about';
 require_once 'includes/config.php';
-// ============================================================
-// ABOUT PAGE — about.php
-// ============================================================
+
+// SEO Meta Data
 $pageTitle = 'About Us – Empower Zone Consulting';
 $pageDesc  = 'Learn about Empower Zone — our mission is to help New York families navigate government benefits with ease, compassion, and expertise.';
 
+// Feature cards data array
 $features = [
     ['icon' => 'fa-file-alt',     'title' => 'Stress-Free Process', 'desc' => 'You stay home, we handle everything. No endless forms or confusing paperwork.'],
     ['icon' => 'fa-clock',        'title' => 'We Save Time',        'desc' => 'No more waiting on hold for hours. We handle the bureaucracy so you don\'t have to.'],
@@ -14,6 +19,7 @@ $features = [
     ['icon' => 'fa-star',         'title' => 'We Get Results',      'desc' => 'Clients get approved faster and easier with us on their side. Maximum benefits guaranteed.'],
 ];
 
+// Success metrics data array
 $stats = [
     ['icon' => 'fa-chart-line',  'num' => '98%',  'label' => 'Success Rate'],
     ['icon' => 'fa-users',       'num' => '500+', 'label' => 'Families Helped'],
@@ -21,6 +27,7 @@ $stats = [
     ['icon' => 'fa-bolt',        'num' => '24h',  'label' => 'Response Time'],
 ];
 
+// Testimonials data array for the custom slider
 $testimonials = [
     ['name' => 'James Wilson',      'role' => 'Medicaid Recipient',      'location' => 'Brooklyn, NY',     'program' => 'Medicaid',          'quote' => 'As a senior on fixed income, I was struggling with medical costs. Empower Zone helped me get Medicaid and even found additional assistance programs I didn\'t know about.', 'img' => 'https://randomuser.me/api/portraits/men/45.jpg'],
     ['name' => 'Maria Rodriguez',   'role' => 'SNAP Benefits',           'location' => 'Queens, NY',       'program' => 'SNAP',              'quote' => 'I had been denied twice before. Empower Zone fixed my case in just two weeks. Amazing service!', 'img' => 'https://randomuser.me/api/portraits/women/32.jpg'],
@@ -182,10 +189,16 @@ $testimonials = [
 </section>
 
 <script>
+/**
+ * Testimonial Slider Logic
+ * Handles the custom featured testimonial section with thumbnails and auto-rotation.
+ */
 document.addEventListener("DOMContentLoaded", function() {
+    // 1. Data Initialization
     const aboutTestimonials = <?php echo json_encode($testimonials); ?>;
     let currentIndex = 0;
     
+    // 2. DOM Element Selection
     const imgEl = document.getElementById("about-slider-img");
     const nameEl = document.getElementById("about-slider-name");
     const roleEl = document.getElementById("about-slider-role");
@@ -198,11 +211,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevBtn = document.getElementById("about-prev-btn");
     const nextBtn = document.getElementById("about-next-btn");
     
+    /**
+     * Updates the slider UI with data from the specified index.
+     * @param {number} index - The index of the testimonial to display.
+     */
     function updateSlider(index) {
         currentIndex = index;
         const t = aboutTestimonials[index];
         
-        // Add fade animation
+        // 3. Fade Animation: Briefly hide content before updating
         const leftPanel = document.querySelector('.custom-featured-left');
         const rightPanel = document.querySelector('.custom-featured-right');
         
@@ -210,6 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
         rightPanel.style.opacity = 0;
         
         setTimeout(() => {
+            // 4. Update Content: Injects new data into the DOM
             imgEl.src = t.img;
             imgEl.alt = t.name;
             nameEl.textContent = t.name;
@@ -218,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function() {
             quoteEl.textContent = '"' + t.quote + '"';
             programEl.textContent = 'Program: ' + t.program;
             
-            // Update thumbs
+            // 5. Update Thumbnails: Highlight the active thumb
             thumbCards.forEach((card, i) => {
                 if (i === index) {
                     card.classList.add("active");
@@ -232,21 +250,23 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
             
-            // Update dots
+            // 6. Update Dots: Highlight the active navigation dot
             dots.forEach((dot, i) => {
                 dot.classList.toggle("active", i === index);
             });
             
+            // 7. Reveal Content: Fade back in
             leftPanel.style.opacity = 1;
             rightPanel.style.opacity = 1;
-        }, 300);
+        }, 300); // 300ms matches the CSS transition time
     }
     
+    // 8. Event Listeners: Handle user interactions
     if (prevBtn) {
         prevBtn.addEventListener("click", () => {
             let nextIdx = (currentIndex - 1 + aboutTestimonials.length) % aboutTestimonials.length;
             updateSlider(nextIdx);
-            resetAutoMove();
+            resetAutoMove(); // Stop and restart auto-rotation on manual click
         });
     }
     
@@ -258,6 +278,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
     
+    // Click events for thumbnails
     thumbCards.forEach((card, i) => {
         card.addEventListener("click", () => {
             updateSlider(i);
@@ -265,6 +286,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     
+    // Click events for dots
     dots.forEach((dot, i) => {
         dot.addEventListener("click", () => {
             updateSlider(i);
@@ -272,12 +294,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     
-    // Auto move feature
+    // 9. Auto-Rotation: Automatically move to the next slide every 5 seconds
     let autoMoveInterval = setInterval(() => {
         let nextIdx = (currentIndex + 1) % aboutTestimonials.length;
         updateSlider(nextIdx);
     }, 5000);
     
+    /**
+     * Resets the auto-rotation timer to prevent awkward jumps after manual clicks.
+     */
     function resetAutoMove() {
         clearInterval(autoMoveInterval);
         autoMoveInterval = setInterval(() => {
@@ -286,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 5000);
     }
     
-    // Smooth transitions
+    // 10. Smooth CSS Transitions: Ensure panels have transition property set
     const leftPanel = document.querySelector('.custom-featured-left');
     const rightPanel = document.querySelector('.custom-featured-right');
     if (leftPanel && rightPanel) {
@@ -295,6 +320,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 </script>
+
 
 <!-- ===== STATS ===== -->
 <section class="stats-why-section" data-aos="fade-up">
