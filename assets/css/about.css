@@ -143,6 +143,8 @@
     text-decoration: none;
     transition: 0.3s;
     box-shadow: 0 4px 12px rgba(94, 158, 168, 0.2);
+   
+    
 }
 
 .care-btn-teal i {
@@ -169,6 +171,7 @@
     font-size: 16px;
     background: transparent;
     transition: 0.3s;
+     text-decoration: none;
 }
 
 .btn-outline-teal:hover {

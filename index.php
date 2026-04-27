@@ -97,7 +97,7 @@ $whyChooseUs = [
             </div>
         </div>
 
-        <a href="contact.php" class="btn-consult">Free Consultation</a>
+        <a href="contact.php" class="btn-teal">Free Consultation</a>
     </div>
 </div>
 
