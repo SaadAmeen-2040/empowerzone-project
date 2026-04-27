@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     let currentIndex = 0;
-    const testimonyText   = document.getElementById('testimonyText');
+    const testimonyText = document.getElementById('testimonyText');
     const testimonyAuthor = document.getElementById('testimonyAuthor');
-    const testimonyTag    = document.getElementById('testimonyTag');
-    const dots            = document.querySelectorAll('.slider-dots .dot');
-    const prevBtn         = document.getElementById('prevBtn');
-    const nextBtn         = document.getElementById('nextBtn');
+    const testimonyTag = document.getElementById('testimonyTag');
+    const dots = document.querySelectorAll('.slider-dots .dot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
     /**
      * Updates the testimonial display with new data.
@@ -70,10 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function showTestimonial(index) {
         if (!testimonyText) return;
         const t = testimonials[index];
-        testimonyText.textContent   = t.text;
+        testimonyText.textContent = t.text;
         testimonyAuthor.textContent = t.author;
         if (testimonyTag) testimonyTag.textContent = t.tag;
-        
+
         // Update active state of navigation dots
         dots.forEach(function (d, i) {
             d.classList.toggle('active', i === index);
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Sends form data directly to the owner's email without a backend.
     // ============================================================
     const contactForm = document.getElementById('contactForm');
-    const submitBtn   = document.getElementById('submitBtn');
+    const submitBtn = document.getElementById('submitBtn');
 
     if (contactForm && submitBtn) {
         // Initialize the EmailJS client
@@ -130,16 +130,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Indicate progress to user
             submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending…';
-            submitBtn.disabled  = true;
+            submitBtn.disabled = true;
 
             const now = new Date();
             const dateTimeString = now.toLocaleString();
-            
+
             // Get selected program label
             const programSelect = document.getElementById('programSelect');
             let programText = 'None Selected';
-            if(programSelect && programSelect.selectedIndex > 0) {
-                 programText = programSelect.options[programSelect.selectedIndex].text;
+            if (programSelect && programSelect.selectedIndex > 0) {
+                programText = programSelect.options[programSelect.selectedIndex].text;
             }
 
             // Map form fields to EmailJS template parameters
@@ -154,29 +154,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Execute the send function
             if (typeof emailjs !== 'undefined') {
+                // 1. Send "Contact Us" Notification to Owner
+                // Template ID: Type templet id  (Owner's notification)
                 emailjs.send('service_uqijdbx', 'template_q3rrevn', templateParams)
-                    .then(function(response) {
+                    .then(function (response) {
+                        // 2. Send "Confirmation email" to User
+                        // Template ID: Type templet id (User's thank you email)
+                        emailjs.send('service_uqijdbx', 'template_1hy1zrv', templateParams);
+
                         // Success state
                         submitBtn.innerHTML = '<i class="fa fa-check"></i> Message Sent!';
                         submitBtn.style.background = '#27ae60';
 
                         // Reset button and form after delay
                         setTimeout(function () {
-                            submitBtn.innerHTML        = '<i class="fa fa-paper-plane"></i> Get Free Consultation';
+                            submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i> Get Free Consultation';
                             submitBtn.style.background = '';
-                            submitBtn.disabled         = false;
+                            submitBtn.disabled = false;
                             contactForm.reset();
                         }, 3000);
-                    }, function(error) {
+                    }, function (error) {
                         // Error state
                         console.error('FAILED...', error);
                         submitBtn.innerHTML = '<i class="fa fa-times"></i> Failed to send';
                         submitBtn.style.background = '#e74c3c';
-                        
+
                         setTimeout(function () {
-                            submitBtn.innerHTML        = '<i class="fa fa-paper-plane"></i> Get Free Consultation';
+                            submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i> Get Free Consultation';
                             submitBtn.style.background = '';
-                            submitBtn.disabled         = false;
+                            submitBtn.disabled = false;
                         }, 3000);
                     });
             } else {
