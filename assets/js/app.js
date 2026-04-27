@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (contactForm && submitBtn) {
         // Initialize the EmailJS client
         if (typeof emailjs !== 'undefined') {
-            emailjs.init("ujVJfTIdsYNah4zoV"); // Public API Key
+            emailjs.init("eoOO17CwanDcq6_pE"); // Public API Key
         }
 
         contactForm.addEventListener('submit', function (e) {
@@ -189,16 +189,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Execute the send function
             if (typeof emailjs !== 'undefined') {
-                // 1. Send "Contact Us" Notification to Owner
-                // Template ID: Type templet id  (Owner's notification)
-                emailjs.send('service_uqijdbx', 'template_q3rrevn', templateParams)
+                // 1. First, try to notify the Owner (Most important)
+                emailjs.send('service_zyag6wv', 'template_q3rrevn', templateParams)
                     .then(function (response) {
-                        // 2. Send "Confirmation email" to User
-                        // Template ID: Type templet id (User's thank you email)
-                        emailjs.send('service_uqijdbx', 'template_1hy1zrv', templateParams);
+                        console.log('Owner Notification Sent:', response.status, response.text);
+                        
+                        // 2. Now try to send the User Confirmation in the background
+                        emailjs.send('service_zyag6wv', 'template_1hy1zrv', templateParams)
+                            .then(function(userRes) {
+                                console.log('User Confirmation Sent:', userRes.status, userRes.text);
+                            })
+                            .catch(function(userErr) {
+                                console.error('User Confirmation FAILED:', userErr);
+                                // We don't show an error to the user here because the owner already got the lead
+                            });
 
-                        // Success state
-                        showAlert('Thank you! Your request has been sent successfully. Check your email for confirmation.', 'success');
+                        // Show success state to user (since owner got the email)
+                        showAlert('Thank you! Your request has been received. We will contact you shortly.', 'success');
                         submitBtn.innerHTML = '<i class="fa fa-check"></i> Message Sent!';
                         submitBtn.style.background = '#27ae60';
 
@@ -209,10 +216,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             submitBtn.disabled = false;
                             contactForm.reset();
                         }, 3000);
-                    }, function (error) {
-                        // Error state
-                        console.error('FAILED...', error);
-                        showAlert('Oops! Something went wrong. Please try again or call us directly.', 'error');
+                    })
+                    .catch(function (error) {
+                        console.error('Owner Notification FAILED:', error);
+                        
+                        // Show error state only if the owner notification fails
+                        showAlert('Unable to send request. Please check your connection or call us directly at ' + (typeof SITE_PHONE !== 'undefined' ? SITE_PHONE : ''), 'error');
                         submitBtn.innerHTML = '<i class="fa fa-times"></i> Failed to send';
                         submitBtn.style.background = '#e74c3c';
 
