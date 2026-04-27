@@ -10,7 +10,9 @@ define('SITE_PHONE',        '+1 (718) 757-6928'); // Formatted for display
 define('SITE_PHONE_RAW',    '+17187576928');      // Raw for tel: links
 define('SITE_EMAIL_INFO',   'info@empowerzone.us');
 define('SITE_EMAIL_GMAIL',  'EmpowerZoneServices@gmail.com');
-define('SITE_ADDRESS',      '16 Court Street, Brooklyn, NY');
+define('SITE_ADDRESS',      '<a href="https://maps.app.goo.gl/mXbSvejnnJJq56KD6" target="_blank">
+  18, Court Street, Brooklyn, NY 
+</a>');
 
 // 2. Site Branding: Global site name and tagline
 define('SITE_NAME',         'Empower Zone');

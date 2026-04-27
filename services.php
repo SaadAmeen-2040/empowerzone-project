@@ -272,7 +272,7 @@ $process = [
     setInterval(() => {
         let next = (currentSlide + 1) % slides.length;
         goToSlide(next);
-    }, 5000);
+    }, 3000);
 </script>
 
 
