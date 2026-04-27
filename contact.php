@@ -34,7 +34,14 @@ $pageDesc  = 'Get your benefits started with a free consultation. Contact Empowe
                     <i class="fa fa-paper-plane"></i> Free Benefits Consultation
                 </div>
 
+                <div id="formAlert" class="form-alert"></div>
+
                 <form id="contactForm" action="#" method="POST">
+                    <!-- Security: Honeypot Field (Hidden from humans) -->
+                    <div style="display:none;">
+                        <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
+                    </div>
+
                     <div class="form-group">
                         <input type="text" id="fullName" name="full_name" placeholder="Your Full Name" required>
                     </div>

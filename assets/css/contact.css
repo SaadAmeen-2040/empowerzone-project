@@ -90,6 +90,39 @@
 .why-list li::before { content:""; width:8px; height:8px; background:#3a9fa8; border-radius:50%; flex-shrink:0; }
 
 /* 4. Contact Page Responsive: Switches from 2-column to 1-column */
+/* 5. Form Alert Messages */
+.form-alert {
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    display: none; /* Controlled by JS */
+    align-items: center;
+    gap: 12px;
+    line-height: 1.4;
+    animation: fadeInDown 0.4s ease;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-alert--success {
+    background-color: #ecfdf5;
+    color: #065f46;
+    border: 1.5px solid #10b981;
+}
+
+.form-alert--error {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1.5px solid #ef4444;
+}
+
+.form-alert i { font-size: 16px; }
+
 @media (max-width: 992px) {
     .contact-wrapper { grid-template-columns: 1fr; }
 }

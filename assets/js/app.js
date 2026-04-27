@@ -118,6 +118,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // ============================================================
     const contactForm = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
+    const formAlert = document.getElementById('formAlert');
+
+    /**
+     * Displays a success or error alert message to the user.
+     * @param {string} message - The text to display.
+     * @param {string} type - 'success' or 'error'.
+     */
+    function showAlert(message, type) {
+        if (!formAlert) return;
+        const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+        formAlert.className = `form-alert form-alert--${type}`;
+        formAlert.innerHTML = `<i class="fa ${icon}"></i> ${message}`;
+        formAlert.style.display = 'flex';
+        
+        // Scroll to alert for visibility on mobile
+        formAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
     if (contactForm && submitBtn) {
         // Initialize the EmailJS client
@@ -127,6 +144,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
+
+            // 1. SECURITY: Honeypot Check (Prevents bot submissions)
+            const honeypot = document.getElementById('honeypot');
+            if (honeypot && honeypot.value !== '') {
+                console.warn('Bot submission blocked.');
+                return;
+            }
+
+            // 2. VALIDATION: Ensure email is valid
+            const emailField = document.getElementById('emailField');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailField && !emailRegex.test(emailField.value)) {
+                showAlert('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            // Hide any existing alerts
+            if (formAlert) formAlert.style.display = 'none';
 
             // Indicate progress to user
             submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending…';
@@ -163,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         emailjs.send('service_uqijdbx', 'template_1hy1zrv', templateParams);
 
                         // Success state
+                        showAlert('Thank you! Your request has been sent successfully. Check your email for confirmation.', 'success');
                         submitBtn.innerHTML = '<i class="fa fa-check"></i> Message Sent!';
                         submitBtn.style.background = '#27ae60';
 
@@ -176,6 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, function (error) {
                         // Error state
                         console.error('FAILED...', error);
+                        showAlert('Oops! Something went wrong. Please try again or call us directly.', 'error');
                         submitBtn.innerHTML = '<i class="fa fa-times"></i> Failed to send';
                         submitBtn.style.background = '#e74c3c';
 
@@ -187,6 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
             } else {
                 console.error("EmailJS not loaded");
+                showAlert('Service currently unavailable. Please call us instead.', 'error');
                 submitBtn.innerHTML = '<i class="fa fa-times"></i> Service Unavailable';
                 submitBtn.disabled = false;
             }
