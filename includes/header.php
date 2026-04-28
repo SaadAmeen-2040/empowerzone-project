@@ -42,6 +42,10 @@
         echo '<link rel="stylesheet" href="assets/css/services.css">';
     } elseif ($currentPage == 'contact.php') {
         echo '<link rel="stylesheet" href="assets/css/contact.css">';
+    } elseif ($currentPage == 'login.php') {
+        echo '<link rel="stylesheet" href="assets/css/login.css">';
+    } elseif ($currentPage == 'signup.php') {
+        echo '<link rel="stylesheet" href="assets/css/signup.css">';
     }
     ?>
 
