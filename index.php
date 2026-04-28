@@ -11,6 +11,7 @@ $emailAddress = "EmpowerZoneServices@gmail.com";
 // Navbar Links Array
 // Navbar Links Array
 $navLinks =[
+    "Login" => "login.php",
     "Home" => "index.php",       // Points to your home page file
     "About Us" => "about.php",   // Points to a separate about page
     "Services" => "services.php",// Points to a separate services page
