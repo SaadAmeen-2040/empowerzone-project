@@ -77,7 +77,7 @@ This project features an automated setup script.
 
 ### 2. Admin Credentials
 - **Default Admin**: `admin@empowerzone.us`
-- **Password**: `admin123` (Change this immediately after login!)
+- **Password**: `********` (Change this immediately after login!)
 
 ### 3. Security Notes
 -   **CSRF**: Forms include a `csrf_token` hidden field validated on the server.
