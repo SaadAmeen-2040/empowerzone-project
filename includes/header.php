@@ -49,11 +49,6 @@
     }
     ?>
 
-    <!-- 9. Global JavaScript Variables -->
-    <script>
-        const SITE_PHONE = "<?php echo SITE_PHONE; ?>";
-    </script>
-
 </head>
 <body>
 

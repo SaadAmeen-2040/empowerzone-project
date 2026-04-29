@@ -229,11 +229,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     .catch(function (error) {
                         console.error('Owner Notification FAILED:', error);
                         
-                        // Fallback phone number if SITE_PHONE is somehow missing
-                        const phone = typeof SITE_PHONE !== 'undefined' ? SITE_PHONE : '+1 (718) 757-6928';
-                        
                         // Show error state only if the owner notification fails
-                        showAlert('Unable to send request. Please check your connection or call us directly at ' + phone, 'error');
+                                                showAlert('Unable to send request. Please check your connection or call us directly at ' + phone, 'error');
                         submitBtn.innerHTML = '<i class="fa fa-times"></i> Failed to send';
                         submitBtn.style.background = '#e74c3c';
 

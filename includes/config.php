@@ -35,7 +35,7 @@ header("X-Frame-Options: DENY");
 header("X-XSS-Protection: 1; mode=block");
 header("X-Content-Type-Options: nosniff");
 header("Referrer-Policy: strict-origin-when-cross-origin");
-header("Content-Security-Policy: default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; connect-src 'self' https://api.emailjs.com;");
+("Content-Security-Policy: default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; connect-src 'self' https://api.emailjs.com;");
 
 // ── 1. Contact Information ─────────────────────────────────────────────────────
 define('SITE_PHONE',       '+1 (718) 757-6928');
@@ -69,11 +69,10 @@ $footerServices = [
 ];
 
 // ── 5. Database Configuration ──────────────────────────────────────────────────
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'empowerzone_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');   // XAMPP default: empty password
-
+define('DB_HOST', 'fdb1034.awardspace.net');
+define('DB_NAME', '4753196_db1');
+define('DB_USER', '4753196_db1');
+define('DB_PASS', '4.1Ut:+R402g3Qi{'); // change this
 // Create PDO connection — used by login.php and signup.php
 try {
     $pdo = new PDO(
