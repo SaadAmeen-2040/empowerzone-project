@@ -4,10 +4,38 @@
  * Centralizes all site-wide constants, database connection, and session start.
  */
 
-// ── Session ────────────────────────────────────────────────────────────────────
+// ── Session & Security ────────────────────────────────────────────────────────
+// 1. Hardening session cookies
+ini_set('session.cookie_httponly', 1);
+ini_set('session.cookie_use_only_cookies', 1);
+// ini_set('session.cookie_secure', 1); // Enable this if your site uses HTTPS
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+// 2. CSRF Token Generation
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+/**
+ * CSRF Validation Helper
+ */
+function validate_csrf($token) {
+    if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
+        header($_SERVER['SERVER_PROTOCOL'] . ' 403 Forbidden');
+        exit('CSRF token validation failed.');
+    }
+    return true;
+}
+
+// 3. Security Headers
+header("X-Frame-Options: DENY");
+header("X-XSS-Protection: 1; mode=block");
+header("X-Content-Type-Options: nosniff");
+header("Referrer-Policy: strict-origin-when-cross-origin");
+header("Content-Security-Policy: default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net; connect-src 'self' https://api.emailjs.com;");
 
 // ── 1. Contact Information ─────────────────────────────────────────────────────
 define('SITE_PHONE',       '+1 (718) 757-6928');

@@ -187,6 +187,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 date_time: dateTimeString
             };
 
+            // 3. DATABASE: Save to our backend database via AJAX
+            const formData = new FormData(contactForm);
+            fetch('contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(dbRes => console.log('Database Save Attempted'))
+            .catch(dbErr => console.error('Database Save FAILED:', dbErr));
+
             // Execute the send function
             if (typeof emailjs !== 'undefined') {
                 // 1. First, try to notify the Owner (Most important)
@@ -220,8 +229,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     .catch(function (error) {
                         console.error('Owner Notification FAILED:', error);
                         
+                        // Fallback phone number if SITE_PHONE is somehow missing
+                        const phone = typeof SITE_PHONE !== 'undefined' ? SITE_PHONE : '+1 (718) 757-6928';
+                        
                         // Show error state only if the owner notification fails
-                        showAlert('Unable to send request. Please check your connection or call us directly at ' + (typeof SITE_PHONE !== 'undefined' ? SITE_PHONE : ''), 'error');
+                        showAlert('Unable to send request. Please check your connection or call us directly at ' + phone, 'error');
                         submitBtn.innerHTML = '<i class="fa fa-times"></i> Failed to send';
                         submitBtn.style.background = '#e74c3c';
 

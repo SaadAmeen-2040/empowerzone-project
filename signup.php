@@ -30,6 +30,8 @@ if ($pdo === null) {
 
 // ── Handle POST ───────────────────────────────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo !== null) {
+    // CSRF Validation
+    validate_csrf($_POST['csrf_token'] ?? '');
 
     $nameValue  = htmlspecialchars(trim($_POST['full_name'] ?? ''), ENT_QUOTES, 'UTF-8');
     $emailValue = htmlspecialchars(trim($_POST['email']     ?? ''), ENT_QUOTES, 'UTF-8');
@@ -123,6 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo !== null) {
                 <?php endif; ?>
 
                 <form id="signupForm" action="signup.php" method="POST" novalidate>
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 
                     <!-- Full Name -->
                     <div class="form-group <?php echo isset($errors['full_name']) ? 'has-error' : ''; ?>">

@@ -38,14 +38,39 @@ try {
             full_name  VARCHAR(100)     NOT NULL,
             email      VARCHAR(150)     NOT NULL,
             password   VARCHAR(255)     NOT NULL,
+            role       ENUM('user', 'admin') NOT NULL DEFAULT 'user',
             created_at TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
             PRIMARY KEY (id),
             UNIQUE KEY uq_email (email)
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
     ");
-    $messages[] = ['ok', 'Table <strong>users</strong> created (or already exists).'];
 
-    // 5. Seed default admin account
+    // Ensure 'role' column exists if the table was already there
+    $checkColumn = $pdo->query("SHOW COLUMNS FROM `users` LIKE 'role'");
+    if (!$checkColumn->fetch()) {
+        $pdo->exec("ALTER TABLE `users` ADD COLUMN `role` ENUM('user', 'admin') NOT NULL DEFAULT 'user' AFTER `password` ");
+        $messages[] = ['ok', 'Added <strong>role</strong> column to existing users table.'];
+    }
+
+    $messages[] = ['ok', 'Table <strong>users</strong> ready.'];
+
+    // 5. Create inquiries table
+    $pdo->exec("
+        CREATE TABLE IF NOT EXISTS inquiries (
+            id         INT UNSIGNED     NOT NULL AUTO_INCREMENT,
+            full_name  VARCHAR(100)     NOT NULL,
+            email      VARCHAR(150)     NOT NULL,
+            phone      VARCHAR(20)      DEFAULT NULL,
+            program    VARCHAR(50)      DEFAULT NULL,
+            message    TEXT             NOT NULL,
+            status     ENUM('New', 'In Progress', 'Resolved') NOT NULL DEFAULT 'New',
+            created_at TIMESTAMP        NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (id)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+    ");
+    $messages[] = ['ok', 'Table <strong>inquiries</strong> ready.'];
+
+    // 6. Seed default admin account
     $adminEmail = 'admin@empowerzone.us';
     $adminPass  = password_hash('Admin@1234', PASSWORD_BCRYPT, ['cost' => 12]);
     $adminName  = 'Admin';
@@ -54,10 +79,11 @@ try {
     $check->execute([$adminEmail]);
 
     if ($check->fetch()) {
-        $messages[] = ['warn', "Default admin <strong>{$adminEmail}</strong> already exists — skipped."];
+        $pdo->prepare("UPDATE users SET role = 'admin' WHERE email = ?")->execute([$adminEmail]);
+        $messages[] = ['warn', "Default admin <strong>{$adminEmail}</strong> already exists — updated role to admin."];
     } else {
         $insert = $pdo->prepare(
-            "INSERT INTO users (full_name, email, password) VALUES (?, ?, ?)"
+            "INSERT INTO users (full_name, email, password, role) VALUES (?, ?, ?, 'admin')"
         );
         $insert->execute([$adminName, $adminEmail, $adminPass]);
         $messages[] = ['ok', "Default admin <strong>{$adminEmail}</strong> inserted successfully."];

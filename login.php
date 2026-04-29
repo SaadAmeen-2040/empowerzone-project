@@ -34,6 +34,8 @@ if ($pdo === null) {
 
 // ── Handle POST ───────────────────────────────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo !== null) {
+    // CSRF Validation
+    validate_csrf($_POST['csrf_token'] ?? '');
 
     $emailValue = htmlspecialchars(trim($_POST['email'] ?? ''), ENT_QUOTES, 'UTF-8');
     $password   = $_POST['password'] ?? '';
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo !== null) {
         $error = 'Please enter a valid email address.';
     } else {
         // Look up user by email
-        $stmt = $pdo->prepare("SELECT id, full_name, email, password FROM users WHERE email = ? LIMIT 1");
+        $stmt = $pdo->prepare("SELECT id, full_name, email, password, role FROM users WHERE email = ? LIMIT 1");
         $stmt->execute([$emailValue]);
         $user = $stmt->fetch();
 
@@ -55,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo !== null) {
             $_SESSION['user_id']    = $user['id'];
             $_SESSION['user_name']  = $user['full_name'];
             $_SESSION['user_email'] = $user['email'];
+            $_SESSION['user_role']  = $user['role']; // Store the role
 
             header('Location: index.php');
             exit;
@@ -104,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo !== null) {
                 <?php endif; ?>
 
                 <form id="loginForm" action="login.php" method="POST" novalidate>
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 
                     <div class="form-group">
                         <label for="email">Email Address</label>

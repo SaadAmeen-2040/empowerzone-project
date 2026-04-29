@@ -25,6 +25,15 @@ $currentPage = $page ?? 'home';
             <li><a href="about.php"        <?php echo ($currentPage === 'about')    ? 'class="active"' : ''; ?>>About Us</a></li>
             <li><a href="services.php"     <?php echo ($currentPage === 'services') ? 'class="active"' : ''; ?>>Services</a></li>
             <li><a href="contact.php"      <?php echo ($currentPage === 'contact')  ? 'class="active"' : ''; ?>>Contact</a></li>
+            
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <?php if ($_SESSION['user_role'] === 'admin'): ?>
+                    <li><a href="admin/dashboard.php">Admin Panel</a></li>
+                <?php endif; ?>
+                <li><a href="logout.php" class="nav-auth-link">Logout</a></li>
+            <?php else: ?>
+                <li><a href="login.php" <?php echo ($currentPage === 'login') ? 'class="active"' : ''; ?>>Login</a></li>
+            <?php endif; ?>
         </ul>
 
         <!-- 3. Primary Call to Action: Featured button in the navbar -->
@@ -47,6 +56,17 @@ $currentPage = $page ?? 'home';
         <a href="about.php"    <?php echo ($currentPage === 'about')    ? 'class="active"' : ''; ?>>About Us</a>
         <a href="services.php" <?php echo ($currentPage === 'services') ? 'class="active"' : ''; ?>>Services</a>
         <a href="contact.php"  <?php echo ($currentPage === 'contact')  ? 'class="active"' : ''; ?>>Contact</a>
+        
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <?php if ($_SESSION['user_role'] === 'admin'): ?>
+                <a href="admin/dashboard.php">Admin Panel</a>
+            <?php endif; ?>
+            <a href="logout.php">Logout</a>
+        <?php else: ?>
+            <a href="login.php">Login</a>
+            <a href="signup.php">Sign Up</a>
+        <?php endif; ?>
+
         <a href="contact.php" class="mobile-call-btn">
             <i class="fa fa-phone"></i> Call Now
         </a>

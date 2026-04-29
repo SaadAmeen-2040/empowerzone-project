@@ -10,6 +10,40 @@ require_once 'includes/config.php';
 // SEO Meta Data
 $pageTitle = 'Contact Us – Empower Zone Consulting';
 $pageDesc  = 'Get your benefits started with a free consultation. Contact Empower Zone Consulting today — no upfront fees, bilingual support.';
+
+// Handle Form Submission
+$successMsg = '';
+$errorMsg   = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // CSRF Validation
+    validate_csrf($_POST['csrf_token'] ?? '');
+
+    // 1. Basic Honeypot Check
+    if (!empty($_POST['honeypot'])) {
+        exit("Spam detected.");
+    }
+
+    $fullName = trim($_POST['full_name'] ?? '');
+    $email    = trim($_POST['email'] ?? '');
+    $phone    = trim($_POST['phone'] ?? '');
+    $program  = trim($_POST['program'] ?? '');
+    $message  = trim($_POST['message'] ?? '');
+
+    if (empty($fullName) || empty($email) || empty($message)) {
+        $errorMsg = "Please fill in all required fields.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errorMsg = "Please enter a valid email address.";
+    } else {
+        try {
+            $stmt = $pdo->prepare("INSERT INTO inquiries (full_name, email, phone, program, message) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([$fullName, $email, $phone, $program, $message]);
+            $successMsg = "Thank you! Your message has been sent. We will contact you soon.";
+        } catch (PDOException $e) {
+            $errorMsg = "Something went wrong. Please try again later.";
+        }
+    }
+}
 ?>
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/navbar.php'; ?>
@@ -34,9 +68,21 @@ $pageDesc  = 'Get your benefits started with a free consultation. Contact Empowe
                     <i class="fa fa-paper-plane"></i> Free Benefits Consultation
                 </div>
 
-                <div id="formAlert" class="form-alert"></div>
+                <div id="formAlert">
+                    <?php if ($successMsg): ?>
+                        <div class="form-alert form-alert--success" style="display:block; margin-bottom: 20px;">
+                            <i class="fa fa-check-circle"></i> <?php echo $successMsg; ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($errorMsg): ?>
+                        <div class="form-alert form-alert--error" style="display:block; margin-bottom: 20px;">
+                            <i class="fa fa-exclamation-circle"></i> <?php echo $errorMsg; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
 
                 <form id="contactForm" action="#" method="POST">
+                    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
                     <!-- Security: Honeypot Field (Hidden from humans) -->
                     <div style="display:none;">
                         <input type="text" id="honeypot" name="honeypot" tabindex="-1" autocomplete="off">
