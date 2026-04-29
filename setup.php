@@ -72,7 +72,7 @@ try {
 
     // 6. Seed default admin account
     $adminEmail = 'admin@empowerzone.us';
-    $adminPass  = password_hash('Admin@1234', PASSWORD_BCRYPT, ['cost' => 12]);
+    $adminPass  = password_hash('Admin@112344', PASSWORD_BCRYPT, ['cost' => 12]);
     $adminName  = 'Admin';
 
     $check = $pdo->prepare("SELECT id FROM users WHERE email = ?");
@@ -139,7 +139,7 @@ try {
   <div class="creds">
     <h3>🔐 Default Login Credentials</h3>
     <div class="cred-row"><span class="cred-label">Email</span><span class="cred-val">admin@empowerzone.us</span></div>
-    <div class="cred-row"><span class="cred-label">Password</span><span class="cred-val">Admin@1234</span></div>
+    <div class="cred-row"><span class="cred-label">Password</span><span class="cred-val">Admin@112344</span></div>
   </div>
   <div class="warn-box">⚠️ IMPORTANT: Delete this file (setup.php) after setup is complete for security!</div>
   <a class="btn" href="login.php">→ Go to Login Page</a>
