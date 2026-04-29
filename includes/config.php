@@ -69,10 +69,10 @@ $footerServices = [
 ];
 
 // ── 5. Database Configuration ──────────────────────────────────────────────────
-define('DB_HOST', 'fdb1034.awardspace.net');
-define('DB_NAME', '4753196_db1');
-define('DB_USER', '4753196_db1');
-define('DB_PASS', '4.1Ut:+R402g3Qi{'); // change this
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'empowerzone_db');
+define('DB_USER', 'root');
+define('DB_PASS', ''); // change this
 // Create PDO connection — used by login.php and signup.php
 try {
     $pdo = new PDO(
